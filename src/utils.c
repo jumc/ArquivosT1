@@ -1,10 +1,13 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
+#include <limits.h>
 #include <regexCustom.h>
 #include <utils.h>
 
-char *readLine(FILE *fp){
+
+char *leLinha(FILE *fp){
     char c = 0;
     int counter = 0;
     char *string = NULL;
@@ -17,6 +20,30 @@ char *readLine(FILE *fp){
     string[counter-1] = '\0';
     
     return string;
+}
+
+int leInt(FILE *fp){
+    char c = '0';
+    int counter = 0;
+    char *string = NULL;
+    int i;
+
+    while(isdigit(c)){
+        c = fgetc(fp);
+        string = (char *)realloc(string,sizeof(char)*(counter+1));
+        string[counter++] = c;
+    };
+
+    // Se leu ao menos digito valido
+    if(counter > 1){
+        string[counter-1] = '\0';
+        i = atoi(string);
+        free(string);
+        return i;
+    } else{ // Se nao, retorna INT_MIN
+        free(string);
+        return INT_MIN;
+    }
 }
 
 void recuperar(FILE *fp){
@@ -110,123 +137,4 @@ void escreverRegistro(int *flags, char *string, FILE *output_file){
             free(campos[i]);
     }
     free(campos);
-}
-
-void escrever(FILE *output_file){
-    //Esta funcao escreve em um arquivo ate o momento em que o usuario nao digitar nada ou
-    //digitar o comando PARAR ou SAIR...
-
-    // Variaveis da funcao
-    int flag = 1;
-    char *string = NULL;
-    
-    //1. Imprimindo na tela o funcionamento da funcao...
-    printf("\n--------------------\n| *ESCRITA*\n");
-    printf("| A insercao de registros ira acabar se voce der entrada em um registro vazio ou digitar o comando PARAR, SAIR ou 0.\n");
-    printf("| Digite os campos no formato: \"nome sobrenome email idade\"\n");
-    printf("| Para correta escrita do arquivo, respeite a ordem de entrada\n");
-    
-    //2. Iniciando a escrita...
-    while(flag){
-        //a. Lendo a string...
-        printf("> ");
-        string = readLine(stdin);
-        if(match(string,"^\\s*[0]\\s*$")) flag = 0;
-        if(match(string,"^\\s*[Ss][Aa][Ii][Rr]\\s*$")) flag = 0;
-        if(match(string,"^\\s*[Pp][Aa][Rr][Aa][Rr]\\s*$")) flag = 0;
-        if(match(string,"^\\s*$")) flag = 0;
-        
-        //b. Analisando qual é o caso tratado...
-        if(flag){
-
-            //a. todos os atributos
-            if(match(string,"^\\s*[a-zA-Z]+\\s+[a-zA-Z]+\\s+[a-zA-Z\\.\\@\\_\\-]+\\s+[0-99999]+\\s*$")){
-                printf("::Todos atributos digitados::\n");
-                int f[4] = {1, 1, 1, 1};
-                escreverRegistro(f, string, output_file);
-            }
-            //b. nome sobrenome e idade
-            else if(match(string,"^\\s*[a-zA-Z]+\\s+[a-zA-Z]+\\s+[0-99999]+\\s*$")){
-                printf("::nome,sobrenome,idade::\n");
-                int f[4] = {1, 1, 0, 1};
-                escreverRegistro(f, string, output_file);
-            }
-            //c.nome email e idade
-            else if(match(string,"^\\s*[a-zA-Z]+\\s+[a-zA-Z\\.\\@\\_\\-]+\\s+[0-99999]+\\s*$")){
-                printf("::nome,email,idade::\n");
-                int f[4] = {1, 0, 1, 1};
-                escreverRegistro(f, string, output_file);
-            }
-            //d.nome sobrenome e email
-            else if(match(string,"^\\s*[a-zA-Z]+\\s+[a-zA-Z]+\\s+[a-zA-Z\\.\\@\\_\\-]+\\s*$")){
-                printf("::nome,sobrenome,email::\n");
-                int f[4] = {1, 1, 1, 0};
-                escreverRegistro(f, string, output_file);
-            }
-            //e. nome e idade
-            else if(match(string,"^\\s*[a-zA-Z]+\\s+[0-99999]+\\s*$")){
-                printf("::nome,idade::\n");
-                int f[4] = {1, 0, 0, 1};
-                escreverRegistro(f, string, output_file);
-            }
-            //f. email e idade
-            else if(match(string,"^\\s*[a-zA-Z\\.\\@\\_\\-]+\\s+[0-99999]+\\s*$")){
-                printf("::email,idade::\n");
-                int f[4] = {0, 0, 1, 1};
-                escreverRegistro(f, string, output_file);
-            }
-            //g. nome e sobrenome
-            else if(match(string,"^\\s*[a-zA-Z]+\\s+[a-zA-Z]+\\s*$")){
-                printf("::nome,sobrenome::\n");
-                int f[4] = {1, 1, 0, 0};
-                escreverRegistro(f, string, output_file);
-            }
-            //h. nome e email
-            else if(match(string,"^\\s*[a-zA-Z]+\\s+[a-zA-Z\\.\\@\\_\\-]+\\s*$")){
-                printf("::nome,email::\n");
-                int f[4] = {1, 0, 1, 0};
-                escreverRegistro(f, string, output_file);
-            }
-            //nome
-            else if(match(string,"^\\s*[a-zA-Z]+\\s*$")){
-                printf("::nome::\n");
-                int f[4] = {1, 0, 0, 0};
-                escreverRegistro(f, string, output_file);
-            }
-            //email
-            else if(match(string,"^\\s*[a-zA-Z\\.\\@\\_\\-]+\\s*$")){
-                printf("::email::\n");
-                int f[4] = {0, 0, 1, 0};
-                escreverRegistro(f, string, output_file);
-            }
-            //idade
-            else if(match(string,"^\\s*[0-99999]+\\s*$")){
-                printf("::idade::\n");
-                int f[4] = {0, 0, 0, 1};
-                escreverRegistro(f, string, output_file);
-            }
-        }
-        //c. Liberando a string lida...
-        free(string);
-    }
-    //3. Encerrando a funcao...
-    return;
-}
-
-int operate_select(){
-    int op = INVALID;
-    char *string = readLine(stdin);
-    if(string){
-        if(match(string,"^\\s*[Ee][Ss][Cc][Rr][Ii][Tt][Aa]\\s*$"))
-            op = ESCRITA;
-        if(match(string,"^\\s*[Rr][Ee][Cc][Uu][Pp][Ee][Rr][Aa][Rr]\\s*$"))
-            op = REC;
-        if(match(string,"^\\s*[Ss][Aa][Ii][Rr]\\s*$"))
-            op = atoi(string);
-        if(match(string,"^\\s*[0-99999]\\s*$"))
-            op = atoi(string);
-        if(op > 3 || op < 0) op = -1;
-        free(string);
-    }
-    return op;
 }
