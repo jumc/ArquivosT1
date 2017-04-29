@@ -6,6 +6,6 @@
 #include <regexCustom.h>
 #include <utils.h>
 
-int escreverFixo(FILE *fp){
+int escreverFixo(FILE *fEntrada, FILE *fSaida){
 	return 1;
 }

@@ -7,7 +7,7 @@
 #include <utils.h>
 
 
-char *leLinha(FILE *fp){
+char *lerLinha(FILE *fp, char delimiter){
     char c = 0;
     int counter = 0;
     char *string = NULL;
@@ -16,13 +16,13 @@ char *leLinha(FILE *fp){
         c = fgetc(fp);
         string = (char *)realloc(string,sizeof(char)*(counter+1));
         string[counter++] = c;
-    }while(c != 10 && c != 11 && c != 12 && c != 13 && c != EOF);
+    }while(c != 10 && c != 11 && c != 12 && c != 13 && c != EOF && c != delimiter);
     string[counter-1] = '\0';
     
     return string;
 }
 
-int leInt(FILE *fp){
+int lerInt(FILE *fp){
     char c = '0';
     int counter = 0;
     char *string = NULL;
@@ -46,6 +46,136 @@ int leInt(FILE *fp){
     }
 }
 
+long int lerLong(FILE *fp){
+    char c = '0';
+    int counter = 0;
+    char *string = NULL;
+    long int i;
+
+    while(isdigit(c)){
+        c = fgetc(fp);
+        string = (char *)realloc(string,sizeof(char)*(counter+1));
+        string[counter++] = c;
+    };
+
+    // Se leu ao menos digito valido
+    if(counter > 1){
+        string[counter-1] = '\0';
+        i = atol(string);
+        free(string);
+        return i;
+    } else{ // Se nao, retorna INT_MIN
+        free(string);
+        return LONG_MIN;
+    }
+}
+
+void lerCampo(char **string, int *tamCampo, FILE *fEntrada){
+// Le um campo do arquivo de entrada, isto e, da posicao atual do ponteiro de arquivo ate o proximo ';' fornecendo o conteudo do campo e seu tamanho 
+    *string = lerLinha(fEntrada, ';');
+    *tamCampo = strlen(*string);
+}
+
+int salvaString(char *string, int tamCampo, FILE *fSaida){
+// Salva uma string em um arquivo de saida. Retorna 1 caso obtenha sucesso, 0 caso contrario
+    int escrito;
+
+    escrito = fwrite(string, 1, tamCampo, fSaida);
+    if(escrito != tamCampo) // Caso nao conseguiu escrever todos os bytes do texto...
+        return 0;
+
+    return 1;
+}
+
+int salvaInt(int *n, FILE *fSaida){
+// Salva um int em um arquivo de saida. Retorna 1 caso obtenha sucesso, 0 caso contrario
+    int escrito;
+
+    escrito = fwrite(n, 1, sizeof(int), fSaida);
+    if(escrito != sizeof(int)) // Caso nao conseguiu escrever todos os bytes do int...
+        return 0;
+
+    return 1;
+}
+
+int salvaLong(long int *n, FILE *fSaida){
+// Salva um long int em um arquivo de saida. Retorna 1 caso obtenha sucesso, 0 caso contrario
+    int escrito;
+
+    escrito = fwrite(n, 1, sizeof(long int), fSaida);
+    if(escrito != sizeof(long int)) // Caso nao conseguiu escrever todos os bytes do long int...
+        return 0;
+
+    return 1;
+}
+
+int salvaCampoVariavel(FILE *fEntrada, FILE *fSaida, char *nomeCampo){
+// Salva um campo de tamanho variavel em um arquivo de saida utilizando o metodo de indicador de tamanho.  Retorna a quantidade de bytes escritos caso obtenha sucesso, -1 caso contrario
+    char *string;
+    int tamCampo;
+
+    lerCampo(&string, &tamCampo, fEntrada);
+    if(match(string, "^\\s*[Nn][Uu][Ll][Ll]\\s*$")){ // Se o valor do campo for nulo...
+        tamCampo = 0;
+    }
+    if(!salvaInt(&tamCampo, fSaida)){
+        free(string);
+        printf("::Erro ao salvar tamanho do %s::\n", nomeCampo);
+        return -1;
+    }
+    if(!salvaString(string, tamCampo, fSaida)){
+        free(string);
+        printf("::Erro ao salvar %s::\n", nomeCampo);
+        return -1;
+    }       
+
+    free(string);
+    return 1;
+}
+
+int salvaCampoFixo(FILE *fEntrada, FILE *fSaida, int limite, char *nomeCampo){
+// Salva um campo de tamanho fixo em um arquivo de saida. Retorna 1 caso obtenha sucesso, 0 caso contrario
+    char *string ;
+    int tamCampo;
+
+    lerCampo(&string, &tamCampo, fEntrada);
+    if(match(string, "^\\s*[Nn][Uu][Ll][Ll]\\s*$")){ // Se o valor do campo for nulo...
+        // ------------------------------ PENSAR NO CASO NULO
+        tamCampo = 0;
+    } else {
+        if(tamCampo != limite){
+            printf("::%s de tamanho invalido::\n", nomeCampo);
+            return 0;
+        }
+
+        if(!salvaString(string, tamCampo, fSaida)){
+            free(string);
+            printf("::Erro ao salvar %s::\n", nomeCampo);
+            return 0;
+        }
+    }       
+
+    free(string);
+    return 1;
+}
+
+int salvaCampoLong(FILE *fEntrada, FILE *fSaida, char *nomeCampo){
+// Salva um campo do tipo long em um arquivo de saida. Retorna 1 caso obtenha sucesso, 0 caso contrario
+    long int n;
+
+    n = lerLong(fEntrada);
+    // Se o valor do campo for string ou nulo salvara como LONG_MIN
+    if(!salvaLong(&n, fSaida)){
+        printf("::Erro ao salvar %s::\n", nomeCampo);
+        return 0;
+    }
+    
+    return 1;
+}
+
+
+
+// ----------------------- REFERENCIA
 void recuperar(FILE *fp){
     int reg_len, field_len, idade, i, counter = 0;
     char *string = NULL;
@@ -86,55 +216,4 @@ void recuperar(FILE *fp){
     fseek(fp,0,SEEK_END);
     printf("\n:: Fim do browsing ::\n");
     return;
-}
-
-void escreverNulo(FILE *output_file){
-    int aux_len = 0;
-    fwrite(&aux_len,sizeof(int),1,output_file);
-}
-
-void escreverString(char *str, FILE *output_file){
-    int aux_len = strlen(str);
-    fwrite(&aux_len, sizeof(int), 1, output_file);
-    fwrite(str, sizeof(char), strlen(str), output_file);
-}
-
-void escreverRegistro(int *flags, char *string, FILE *output_file){
-    char **campos = (char **) malloc(sizeof(char *)*4); // [0] Nome [1] Sobrenome [2] Email [3] Idade
-    char *aux;
-    int len = 0, i, aux_len, idade;
-
-    //Determinando tamanho do registro e obtendo campos
-    for(i = 0; i < 3; i++){
-        if(flags[i]){
-            campos[i] = tokenize(string, i, ' ');
-            len += 4 + strlen(campos[i]);
-        }
-    }
-    if(flags[3]){
-        aux = tokenize(string,3,' ');
-        idade = atoi(aux);
-        len += 8;
-    }
-    fwrite(&len,sizeof(int),1,output_file);
-
-    //Escrevendo dados
-    for(int i = 0; i < 3; i++){
-        if(flags[i])
-            escreverString(campos[i], output_file);
-        else
-            escreverNulo(output_file);
-    }    
-    if(flags[3]){
-        aux_len = 4;
-        fwrite(&aux_len,sizeof(int),1,output_file);
-        fwrite(&idade,sizeof(int),1,output_file);
-    } else
-        escreverNulo(output_file);
-
-    for(i = 0; i < 4; i++){
-        if(flags[i])
-            free(campos[i]);
-    }
-    free(campos);
 }

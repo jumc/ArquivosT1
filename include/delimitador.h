@@ -1,6 +1,6 @@
 #ifndef _DELIMITADOR_H_
 #define _DELIMITADOR_H_
 
-int escreverDelimitador(FILE *);
+int escreverDelimitador(FILE *, FILE *);
 
 #endif

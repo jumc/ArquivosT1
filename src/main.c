@@ -43,46 +43,68 @@ Recuperar arquivo
 int main (int argc, char **argv){
     // Variaveis utilizadas no programa...
     int op = -1;
-    FILE *arquivo_de_saida = fopen("output.txt","ab+");
-    if(arquivo_de_saida == NULL){
+
+    FILE *fEntrada = fopen("turmaA-dadosDominios.csv", "rb");
+    if(fEntrada == NULL){
+        printf("Nao foi possivel abrir o arquivo de entrada\n");
+        return 0;
+    } 
+    FILE *fSaida = fopen("output.txt","wb+");
+    if(fSaida == NULL){
         printf("Nao foi possivel abrir/criar o arquivo de saida\n");
+        return 0;
     }   
+
     while(op){
         // 1. Menu
         printf("-------------------------------- MENU\n\n");
-        printf("Gerar arquivo\n\t(1) Indicador de tamanho\n\t(2) Delimitadores entre registros\n\t(3) Número fixo de campos");
-        printf("\nRecuperar arquivo\n\t(4) Visualizar todos os registros\n\t(5) Busca por domínio\n\t");
-        printf("(6) Registro completo por RRN\n\t(7) Campo de um registro por RRN\n\t(0) Sair\n\nDigite o codigo da operacao: ");
-        op = leInt(stdin);
+        printf("Gerar arquivo\n");
+        printf("\t(1) Indicador de tamanho\n");
+        printf("\t(2) Delimitadores entre registros\n");
+        printf("\t(3) Número fixo de campos");
+        printf("\nRecuperar arquivo\n");
+        printf("\t(4) Visualizar todos os registros\n");
+        printf("\t(5) Busca por domínio\n");
+        printf("\t(6) Registro completo por RRN\n");
+        printf("\t(7) Campo de um registro por RRN\n");
+        printf("(0) Sair\n");
+        printf("\nDigite o codigo da operacao: ");
+        op = lerInt(stdin);
         
         //2. Realizando as operacoes... 
         switch(op){
             case 1:
-                if(escreverIndicador(arquivo_de_saida)){
+                if(escreverIndicador(fEntrada, fSaida)){
                     printf("Escrita realizada com sucesso\n\n");
+                } else{
+                    printf("::Erro na escrita::\n\n");
                 }
             break;
             case 2:
-                if(escreverDelimitador(arquivo_de_saida)){
+                if(escreverDelimitador(fEntrada, fSaida)){
                     printf("Escrita realizada com sucesso\n\n");
+                } else{
+                    printf("::Erro na escrita::\n\n");
                 }
             break;
             case 3:
-                if(escreverFixo(arquivo_de_saida)){
+                if(escreverFixo(fEntrada, fSaida)){
                     printf("Escrita realizada com sucesso\n\n");
+                } else{
+                    printf("::Erro na escrita::\n\n");
                 }
             break;
             /*case 4:
-                visualizar(arquivo_de_saida);
+                visualizar(fSaida);
             break;
             case 5:
-                buscaDominio(arquivo_de_saida);
+                buscaDominio(fSaida);
             break;
             case 6:
-                registroRRN(arquivo_de_saida);
+                registroRRN(fSaida);
             break;
             case 7:
-                campoResgistro(arquivo_de_saida);
+                campoResgistro(fSaida);
             break;*/  
             case 0:
                 printf("Obrigado por usar nosso programa! Ate a proxima!\n");
@@ -94,6 +116,7 @@ int main (int argc, char **argv){
     }
     
     //3. Encerrando o programa...
-    fclose(arquivo_de_saida);
+    fclose(fEntrada);
+    fclose(fSaida);
     return 0;
 }

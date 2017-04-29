@@ -6,6 +6,6 @@
 #include <regexCustom.h>
 #include <utils.h>
 
-int escreverIndicador(FILE *fp){
+int escreverIndicador(FILE *fEntrada, FILE *fSaida){
 	return 1;
 }
