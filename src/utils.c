@@ -5,9 +5,20 @@
 #include <limits.h>
 #include <regexCustom.h>
 #include <utils.h>
+#include <delimitador.h>
 
+/* A FAZER
+
+--> Funcao para descobrir com que tipo de registros foi construido o arquivo
+--> Mascara para documento
+--> Mascara para timestamp
+--> Visualizacao de nulo
+--> Truncar campos fixos
+--> Visualizar acentos e caracteres especiais
+*/
 
 char *lerLinha(FILE *fp, char delimiter){
+// Retorna uma string lida de um arquivo do seu ponto atual ate um delimitador, fim de arquivo, enter ou outros indicadores de fim de linha
     char c = 0;
     int counter = 0;
     char *string = NULL;
@@ -22,7 +33,25 @@ char *lerLinha(FILE *fp, char delimiter){
     return string;
 }
 
-int lerInt(FILE *fp){
+char *lerNChar(FILE *fp, int n){
+// Retorna uma string de n chars lida a partir de um arquivo a nao ser que encontre fim de arquivo
+    char c = 0;
+    int counter = 0;
+    char *string = NULL;
+    
+    do{
+        c = fgetc(fp);
+        string = (char *)realloc(string,sizeof(char)*(counter+1));
+        string[counter++] = c;
+    }while(counter < n && c != EOF);
+    string = (char *)realloc(string,sizeof(char)*(counter));
+    string[counter] = '\0';
+    
+    return string;
+}
+
+int lerCharToInt(FILE *fp){
+// Le digitos de um arquivo ate que o caracter lido nao seja um algarismo. Retorna convertido para int. Caso nao tenha lido ao menos 1 numero, retorna INT_MIN
     char c = '0';
     int counter = 0;
     char *string = NULL;
@@ -46,7 +75,8 @@ int lerInt(FILE *fp){
     }
 }
 
-long int lerLong(FILE *fp){
+long int lerCharToLong(FILE *fp){
+// Le digitos de um arquivo ate que o caracter lido nao seja um algarismo. Retorna convertido para long int. Caso nao tenha lido ao menos 1 numero, retorna LONG_MIN
     char c = '0';
     int counter = 0;
     char *string = NULL;
@@ -140,20 +170,19 @@ int salvaCampoFixo(FILE *fEntrada, FILE *fSaida, int limite, char *nomeCampo){
 
     lerCampo(&string, &tamCampo, fEntrada);
     if(match(string, "^\\s*[Nn][Uu][Ll][Ll]\\s*$")){ // Se o valor do campo for nulo...
-        // ------------------------------ PENSAR NO CASO NULO
-        tamCampo = 0;
+        string = (char *) calloc(sizeof(char), limite);
+        tamCampo = limite;
     } else {
         if(tamCampo != limite){
             printf("::%s de tamanho invalido::\n", nomeCampo);
             return 0;
         }
-
-        if(!salvaString(string, tamCampo, fSaida)){
-            free(string);
-            printf("::Erro ao salvar %s::\n", nomeCampo);
-            return 0;
-        }
-    }       
+    }
+    if(!salvaString(string, tamCampo, fSaida)){
+        free(string);
+        printf("::Erro ao salvar %s::\n", nomeCampo);
+        return 0;
+    } 
 
     free(string);
     return 1;
@@ -163,7 +192,7 @@ int salvaCampoLong(FILE *fEntrada, FILE *fSaida, char *nomeCampo){
 // Salva um campo do tipo long em um arquivo de saida. Retorna 1 caso obtenha sucesso, 0 caso contrario
     long int n;
 
-    n = lerLong(fEntrada);
+    n = lerCharToLong(fEntrada);
     // Se o valor do campo for string ou nulo salvara como LONG_MIN
     if(!salvaLong(&n, fSaida)){
         printf("::Erro ao salvar %s::\n", nomeCampo);
@@ -173,47 +202,55 @@ int salvaCampoLong(FILE *fEntrada, FILE *fSaida, char *nomeCampo){
     return 1;
 }
 
-
-
-// ----------------------- REFERENCIA
-void recuperar(FILE *fp){
-    int reg_len, field_len, idade, i, counter = 0;
-    char *string = NULL;
-    
-    fseek(fp,0,SEEK_SET);
-    printf("\n---------- DADOS DO SISTEMA -------------\n");
-    while(!feof(fp)){
-        if(counter == 10){
-            counter = 0;
-            printf(":: Aperte ENTER para continuar o browsing ::\n");
-            getchar();
-        }
-        
-        fread(&reg_len,sizeof(int),1,fp);
-        
-        if(!feof(fp)){
-            printf("| ");
-            for(i = 0; i < 3; i++){
-                fread(&field_len,sizeof(int),1,fp);
-                if(field_len > 0){
-                    string = (char *)realloc(string,sizeof(char)*field_len+1);
-                    fread(string,sizeof(char),field_len,fp);
-                    string[field_len] = '\0';
-                    printf("%s\t",string);
-                    free(string);
-                    string = NULL;
-                }   
-            }    
-            fread(&field_len,sizeof(int),1,fp);
-            if(field_len > 0){
-                fread(&idade,sizeof(int),1,fp);
-                printf("%d\t",idade);
-            }
-            printf("\n");
-        }
-        counter++;
+void vizualizaCampoVariavel(FILE *fp, char *nomeCampo){
+// Mostra na tela um campo de tamanho variavel
+    int tam;
+    fread(&tam, sizeof(int), 1, fp);
+    char *campo = lerNChar(fp, tam);
+    if(campo){ // Se o valor do campo nao for nulo...
+        printf("%s: %s\n", nomeCampo, campo);
+        free(campo);
+    } else {
+        printf("%s:\n", nomeCampo);
     }
-    fseek(fp,0,SEEK_END);
-    printf("\n:: Fim do browsing ::\n");
-    return;
+}
+
+void vizualizaCampoFixo(FILE *fp, char *nomeCampo, int tam){
+// Mostra na tela um campo de tamanho fixo
+    //VER SE E NULL
+    char *campo = lerNChar(fp, tam);
+    printf("%s: %s\n", nomeCampo, campo);
+    free(campo);
+}
+
+void vizualizaCampoLong(FILE *fp, char *nomeCampo){
+// Mostra na tela um campo long
+    long int n;
+    fread(&n, sizeof(long int), 1, fp);
+    if(n == LONG_MIN){
+        printf("%s:\n", nomeCampo);
+    } else {
+        printf("%s: %ld\n", nomeCampo, n);
+    }
+}
+
+void visualizar(FILE *fSaida){
+// Mostra todos os registros na tela, de acordo com o tipo de organizacao do arquivo de saida
+    /*int tipo = tipoRegistro(fSaida);  
+
+    switch(tipo):
+        case 0:
+            visualizarIndicador(fSaida);
+            break;
+        case 1: 
+            visualizarDelimitadores(fSaida);
+            break;
+        case 2:
+            visualizarFixo(fSaida);
+            break;
+        case 3:
+            printf("::Arquivo vazio::\n\n");
+        case 4:
+            printf("::Dados gravados de maneira incorreta::\n\n");*/
+    visualizarDelimitadores(fSaida);
 }

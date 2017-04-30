@@ -3,4 +3,6 @@
 
 int escreverDelimitador(FILE *, FILE *);
 
+void visualizarDelimitadores(FILE *fSaida);
+
 #endif

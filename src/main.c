@@ -49,7 +49,7 @@ int main (int argc, char **argv){
         printf("Nao foi possivel abrir o arquivo de entrada\n");
         return 0;
     } 
-    FILE *fSaida = fopen("output.txt","wb+");
+    FILE *fSaida = fopen("output.txt","ab+");
     if(fSaida == NULL){
         printf("Nao foi possivel abrir/criar o arquivo de saida\n");
         return 0;
@@ -69,7 +69,7 @@ int main (int argc, char **argv){
         printf("\t(7) Campo de um registro por RRN\n");
         printf("(0) Sair\n");
         printf("\nDigite o codigo da operacao: ");
-        op = lerInt(stdin);
+        op = lerCharToInt(stdin);
         
         //2. Realizando as operacoes... 
         switch(op){
@@ -94,10 +94,10 @@ int main (int argc, char **argv){
                     printf("::Erro na escrita::\n\n");
                 }
             break;
-            /*case 4:
+            case 4:
                 visualizar(fSaida);
             break;
-            case 5:
+            /*case 5:
                 buscaDominio(fSaida);
             break;
             case 6:

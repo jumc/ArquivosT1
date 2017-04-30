@@ -55,3 +55,31 @@ int escreverDelimitador(FILE *fEntrada, FILE *fSaida){
 	}
 	return 1;
 }
+
+void visualizarDelimitadores(FILE *fSaida){
+// Mostra em tela todos os registros armazenados
+
+	// O que esta acontecendo com o registro 167?
+	int counter = 0;
+
+	freopen("output.txt", "rb", fSaida);
+    fseek(fSaida,0,SEEK_SET);
+    while(!feof(fSaida)){
+        if(counter % 10 == 0 && counter != 0){
+            printf("\n:: Aperte ENTER para continuar o browsing ::");
+            getchar();
+        }
+		printf("\nRegistro %d\n", counter);
+		vizualizaCampoVariavel(fSaida, "Dominio");		
+		vizualizaCampoFixo(fSaida, "Documento", 19);
+		vizualizaCampoVariavel(fSaida, "Nome");
+		vizualizaCampoVariavel(fSaida, "Cidade");
+		vizualizaCampoVariavel(fSaida, "UF");
+		vizualizaCampoFixo(fSaida, "dataHoraCadastro", 19);
+		vizualizaCampoFixo(fSaida, "dataHoraAtualiza", 19);
+		vizualizaCampoLong(fSaida, "Ticket");
+		// Pegando o # para ir para o proximo registro
+		fgetc(fSaida);
+		counter++;
+	}
+}

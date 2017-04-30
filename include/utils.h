@@ -3,9 +3,11 @@
 
 char *lerLinha(FILE *fp, char delimiter);
 
-int lerInt(FILE *fp);
+char *lerNChar(FILE *fp, int n);
 
-long int lerLong(FILE *fp);
+int lerCharToInt(FILE *fp);
+
+long int lerCharToLong(FILE *fp);
 
 void lerCampo(char **string, int *tamCampo, FILE *fEntrada);
 
@@ -21,6 +23,12 @@ int salvaCampoFixo(FILE *fEntrada, FILE *fSaida, int limite, char *nomeCampo);
 
 int salvaCampoLong(FILE *fEntrada, FILE *fSaida, char *nomeCampo);
 
+void vizualizaCampoVariavel(FILE *fp, char *nomeCampo);
 
+void vizualizaCampoFixo(FILE *fp, char *nomeCampo, int tam);
+
+void vizualizaCampoLong(FILE *fp, char *nomeCampo);
+
+void visualizar(FILE *fSaida);
 
 #endif
