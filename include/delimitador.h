@@ -5,4 +5,6 @@ int escreverDelimitador(FILE *, FILE *);
 
 void visualizarDelimitadores(FILE *fSaida);
 
+int buscaDominioDelimitadores(char *dominioBuscado, FILE *fp);
+
 #endif

@@ -97,10 +97,12 @@ int main (int argc, char **argv){
             case 4:
                 visualizar(fSaida);
             break;
-            /*case 5:
-                buscaDominio(fSaida);
+            case 5:
+                if(!buscaDominio(fSaida)){
+                    printf("::Dominio nao encontrado::\n\n");
+                }
             break;
-            case 6:
+            /*case 6:
                 registroRRN(fSaida);
             break;
             case 7:

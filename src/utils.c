@@ -15,6 +15,7 @@
 --> Visualizacao de nulo
 --> Truncar campos fixos
 --> Visualizar acentos e caracteres especiais
+--> Tirar espacos e colocar em upper na comparacao da busca
 */
 
 char *lerLinha(FILE *fp, char delimiter){
@@ -153,6 +154,7 @@ int salvaCampoVariavel(FILE *fEntrada, FILE *fSaida, char *nomeCampo){
         printf("::Erro ao salvar tamanho do %s::\n", nomeCampo);
         return -1;
     }
+    printf("%s\n", string);
     if(!salvaString(string, tamCampo, fSaida)){
         free(string);
         printf("::Erro ao salvar %s::\n", nomeCampo);
@@ -170,11 +172,13 @@ int salvaCampoFixo(FILE *fEntrada, FILE *fSaida, int limite, char *nomeCampo){
 
     lerCampo(&string, &tamCampo, fEntrada);
     if(match(string, "^\\s*[Nn][Uu][Ll][Ll]\\s*$")){ // Se o valor do campo for nulo...
+        free(string);
         string = (char *) calloc(sizeof(char), limite);
         tamCampo = limite;
     } else {
         if(tamCampo != limite){
             printf("::%s de tamanho invalido::\n", nomeCampo);
+            free(string);
             return 0;
         }
     }
@@ -202,11 +206,19 @@ int salvaCampoLong(FILE *fEntrada, FILE *fSaida, char *nomeCampo){
     return 1;
 }
 
-void vizualizaCampoVariavel(FILE *fp, char *nomeCampo){
-// Mostra na tela um campo de tamanho variavel
+char *campoVariavel(FILE *fp){
+// Retorna o conteudo de um campo de tamanho variavel
     int tam;
+
     fread(&tam, sizeof(int), 1, fp);
     char *campo = lerNChar(fp, tam);
+
+    return campo;
+}
+
+void vizualizaCampoVariavel(FILE *fp, char *nomeCampo){
+// Mostra na tela um campo de tamanho variavel
+    char *campo = campoVariavel(fp);
     if(campo){ // Se o valor do campo nao for nulo...
         printf("%s: %s\n", nomeCampo, campo);
         free(campo);
@@ -253,4 +265,32 @@ void visualizar(FILE *fSaida){
         case 4:
             printf("::Dados gravados de maneira incorreta::\n\n");*/
     visualizarDelimitadores(fSaida);
+}
+
+int buscaDominio(FILE *fSaida){
+// Mostra todos os registros na que contenham o dominio especificado pelo usuario, de acordo com o tipo de organizacao do arquivo de saida
+    printf("Buscar pelo dominio: ");
+    char *dominioBuscado = lerLinha(stdin, ' ');
+    printf("\n");
+    /*int tipo = tipoRegistro(fSaida);  
+
+    switch(tipo):
+        case 0:
+             return visualizarIndicador(fSaida);
+            break;
+        case 1: 
+            return buscaDominioDelimitadores(dominioBuscado, fSaida);
+            break;
+        case 2:
+            return visualizarFixo(fSaida);
+            break;
+        case 3:
+            printf("::Arquivo vazio::\n\n");
+            return 0;
+            break;
+        case 4:
+            printf("::Dados gravados de maneira incorreta::\n\n");
+            return 0;
+            break;*/
+    return buscaDominioDelimitadores(dominioBuscado, fSaida);
 }

@@ -23,6 +23,8 @@ int salvaCampoFixo(FILE *fEntrada, FILE *fSaida, int limite, char *nomeCampo);
 
 int salvaCampoLong(FILE *fEntrada, FILE *fSaida, char *nomeCampo);
 
+char *campoVariavel(FILE *fp);
+
 void vizualizaCampoVariavel(FILE *fp, char *nomeCampo);
 
 void vizualizaCampoFixo(FILE *fp, char *nomeCampo, int tam);
@@ -30,5 +32,7 @@ void vizualizaCampoFixo(FILE *fp, char *nomeCampo, int tam);
 void vizualizaCampoLong(FILE *fp, char *nomeCampo);
 
 void visualizar(FILE *fSaida);
+
+int buscaDominio(FILE *fSaida);
 
 #endif

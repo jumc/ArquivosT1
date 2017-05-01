@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 #include <regexCustom.h>
 #include <utils.h>
 
@@ -14,6 +15,7 @@ int escreverDelimitador(FILE *fEntrada, FILE *fSaida){
 	tamEntrada = ftell(fEntrada);
 	rewind(fEntrada);
 
+	freopen("output.txt", "wb+", fSaida);
 	while(ftell(fEntrada) != tamEntrada){
 		// Dominio	
 		if(salvaCampoVariavel(fEntrada, fSaida, "dominio") == -1)
@@ -56,6 +58,44 @@ int escreverDelimitador(FILE *fEntrada, FILE *fSaida){
 	return 1;
 }
 
+void registroDelimitadores(FILE *fSaida){
+// Mostra na tela o registro atual do arquivo
+	vizualizaCampoVariavel(fSaida, "Dominio");		
+	vizualizaCampoFixo(fSaida, "Documento", 19);
+	vizualizaCampoVariavel(fSaida, "Nome");
+	vizualizaCampoVariavel(fSaida, "Cidade");
+	vizualizaCampoVariavel(fSaida, "UF");
+	vizualizaCampoFixo(fSaida, "dataHoraCadastro", 19);
+	vizualizaCampoFixo(fSaida, "dataHoraAtualiza", 19);
+	vizualizaCampoLong(fSaida, "Ticket");
+	// Pegando o # para ir para o proximo registro
+	fgetc(fSaida);	
+}
+
+int buscaDominioDelimitadores(char *dominioBuscado, FILE *fp){
+// Busca registros com dominio igual ao fornecido pelo usuario
+	char *dominioAtual, c;
+	int achou = 0;
+
+	freopen("output.txt", "rb", fp);
+    fseek(fp,0,SEEK_SET);
+    
+    while(!feof(fp)){
+	    dominioAtual = campoVariavel(fp);
+	    if(!strcmp(dominioAtual, dominioBuscado)){
+	    	achou = 1;
+	    	fseek(fp, - strlen(dominioBuscado) - sizeof(int), SEEK_CUR);
+	    	registroDelimitadores(fp);
+	    	printf("\n");
+	    }
+	    do{
+	    	c = fgetc(fp);
+	    } while(c != EOF && c != '#');
+	} 
+
+	return achou;
+}
+
 void visualizarDelimitadores(FILE *fSaida){
 // Mostra em tela todos os registros armazenados
 
@@ -69,17 +109,9 @@ void visualizarDelimitadores(FILE *fSaida){
             printf("\n:: Aperte ENTER para continuar o browsing ::");
             getchar();
         }
+        registroDelimitadores(fSaida);	
 		printf("\nRegistro %d\n", counter);
-		vizualizaCampoVariavel(fSaida, "Dominio");		
-		vizualizaCampoFixo(fSaida, "Documento", 19);
-		vizualizaCampoVariavel(fSaida, "Nome");
-		vizualizaCampoVariavel(fSaida, "Cidade");
-		vizualizaCampoVariavel(fSaida, "UF");
-		vizualizaCampoFixo(fSaida, "dataHoraCadastro", 19);
-		vizualizaCampoFixo(fSaida, "dataHoraAtualiza", 19);
-		vizualizaCampoLong(fSaida, "Ticket");
-		// Pegando o # para ir para o proximo registro
-		fgetc(fSaida);
 		counter++;
+		printf("%c", fgetc(fSaida));
 	}
 }
