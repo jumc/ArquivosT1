@@ -57,7 +57,7 @@ int main (int argc, char **argv){
 
     while(op){
         // 1. Menu
-        printf("-------------------------------- MENU\n\n");
+        printf("------------------------------------ MENU\n\n");
         printf("Gerar arquivo\n");
         printf("\t(1) Indicador de tamanho\n");
         printf("\t(2) Delimitadores entre registros\n");
@@ -102,10 +102,10 @@ int main (int argc, char **argv){
                     printf("::Dominio nao encontrado::\n\n");
                 }
             break;
-            /*case 6:
+            case 6:
                 registroRRN(fSaida);
             break;
-            case 7:
+            /*case 7:
                 campoResgistro(fSaida);
             break;*/  
             case 0:

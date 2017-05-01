@@ -7,4 +7,6 @@ void visualizarDelimitadores(FILE *fSaida);
 
 int buscaDominioDelimitadores(char *dominioBuscado, FILE *fp);
 
+void registroRRNDelimitadores(int rrn, FILE *fSaida);
+
 #endif

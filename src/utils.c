@@ -294,3 +294,29 @@ int buscaDominio(FILE *fSaida){
             break;*/
     return buscaDominioDelimitadores(dominioBuscado, fSaida);
 }
+
+void registroRRN(FILE *fSaida){
+    // Mostra o registro com o RRN especificado pelo usuario, de acordo com o tipo de organizacao do arquivo de saida
+    printf("Buscar pelo RRN: ");
+    int rrn = lerCharToInt(stdin);
+    printf("\n");
+    /*int tipo = tipoRegistro(fSaida);  
+
+    switch(tipo):
+        case 0:
+            registroRRNIndicador(fSaida);
+            break;
+        case 1: 
+            registroRRNDelimitadores(fSaida);
+            break;
+        case 2:
+            registroRRNFixo(fSaida);
+            break;
+        case 3:
+            printf("::Arquivo vazio::\n\n");
+            break;
+        case 4:
+            printf("::Dados gravados de maneira incorreta::\n\n");
+            break;*/
+    registroRRNDelimitadores(rrn, fSaida);
+}

@@ -115,3 +115,25 @@ void visualizarDelimitadores(FILE *fSaida){
 		printf("%c", fgetc(fSaida));
 	}
 }
+
+void registroRRNDelimitadores(int rrn, FILE *fp){
+	int counter = 0;
+	char c;
+
+	freopen("output.txt", "rb", fp);
+    fseek(fp,0,SEEK_SET);
+    
+    while(!feof(fp) && counter < rrn){
+	    do{
+	    	c = fgetc(fp);
+	    } while(c != EOF && c != '#');
+	    counter++;
+	} 
+	if(counter == rrn){
+    	registroDelimitadores(fp);
+    	printf("\n");
+    } else {
+    	printf("::Nao foi possivel recuperar o registro::\n");
+    }
+
+}

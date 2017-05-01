@@ -35,4 +35,6 @@ void visualizar(FILE *fSaida);
 
 int buscaDominio(FILE *fSaida);
 
+void registroRRN(FILE *fSaida);
+
 #endif
