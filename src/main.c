@@ -50,28 +50,11 @@ int main (int argc, char **argv){
     arquivoDeSaida = fopen_("output.txt","ab+");
 
     //2. Apresentando o programa ao usuario e inicializando o loop de operacoes...
-    printf("|\tPROGRAMA GERADOR DE ARQUIVOS\n|\n");
-    printf("| Bem vindo ao programa responsavel por gerar arquivos de acordo suas\n");
-    printf("|preferencias de construcao e por procurar os dados armazenados.\n");
-    printf("| Os arquivos gerados possuirao dados de dominios governamentais.\n");
-    printf("| Voce pode escolher qualquer opcao abaixo digitando o codigo da ope_\n");
-    printf("|racao desejada ou seu nome/palavra chave.\n");
-    printf("Operacoes para Gerar arquivo\n");
-    printf("\t(1) Indicador de tamanho\n");
-    printf("\t(2) Delimitadores entre registros\n");
-    printf("\t(3) Número fixo de campos\n");
-    printf("Operacoes para Recuperar arquivo\n");
-    printf("\t(4) Visualizar todos os registros\n");
-    printf("\t(5) Busca por domínio\n");        
-    printf("\t(6) Registro completo por RRN\n");
-    printf("\t(7) Campo de um registro por RRN\n");
-    printf("\t(9) Exibir menu de operacoes\n");
-    printf("\t(0) Sair\n");
-    printf("\n| Digite a operacao que deseja realizar: ");
+    imprimirSaudacoes();
     
     while(operacao){
         //3. Lendo a operacao que o usuario deseja realizar
-        operacao = lerCharToInt(stdin);
+        operacao = lerOperacao(stdin);
         
         //4. Realizando a operacao lida a cima... 
         switch(operacao){     
@@ -114,7 +97,12 @@ int main (int argc, char **argv){
             break;
                 
             case SAIR:
-                printf("Obrigado por usar nosso programa! Ate a proxima!\n");
+                printf("| Obrigado por usar nosso programa! Ate a proxima!\n --- \n");
+                printf("|    SCC0215 . Organização de Arquivos . Turma A\n");
+                printf("| Gabriel Cyrillo dos Santos Cerqueira - nº\n");
+                printf("| Joao Pedro Ramos Belmiro             - nº\n");
+                printf("| Juliana de Mello Crivelli            - nº 8909303\n");
+                printf("| Matheus Aparecido do Carmo Alves     - nº 9791114\n --- \n");
             break;
                 
             default:
