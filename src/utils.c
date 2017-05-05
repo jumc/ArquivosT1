@@ -320,3 +320,12 @@ void registroRRN(FILE *fSaida){
             break;*/
     registroRRNDelimitadores(rrn, fSaida);
 }
+
+FILE *fopen_(char *filename, char *openmode){
+    FILE *fp = fopen(filename,openmode);
+    if(fp == NULL){
+        printf("Nao foi possivel abrir o arquivo de entrada\n");
+        exit(1);
+    }
+    return fp;
+}
