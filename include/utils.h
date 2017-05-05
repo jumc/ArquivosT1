@@ -9,8 +9,8 @@ enum{
   NUMERO_DE_CAMPS_FIXO,
   VIZUALIZAR_TODOS,
   VIZUALIZAR_DOMINIO,
-  VIZUALIZAR_REG_RNN,
-  VIZUALIZAR_CAMPO_RNN,
+  VIZUALIZAR_REG_RRN,
+  VIZUALIZAR_CAMPO_RRN,
   MENU = 9
 };
 
@@ -51,5 +51,9 @@ int buscaDominio(FILE *fSaida);
 void registroRRN(FILE *fSaida);
 
 FILE *fopen_(char *filename, char *openmode);
+
+int lerOperacao();
+
+void imprimirSaudacoes();
 
 #endif
