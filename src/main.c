@@ -88,11 +88,11 @@ int main (int argc, char **argv){
                     printf(":: Dominio nao encontrado ::\n\n");
             break;
                 
-            case VIZUALIZAR_REG_RNN:
+            case VIZUALIZAR_REG_RRN:
                 registroRRN(arquivoDeSaida);
             break;
                 
-            case VIZUALIZAR_CAMPO_RNN:
+            case VIZUALIZAR_CAMPO_RRN:
                 //campoResgistro(fSaida);
             break;
                 
