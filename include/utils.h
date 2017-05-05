@@ -1,6 +1,19 @@
 #ifndef _UTILS_H_
 #define _UTILS_H_
 
+enum{
+  INVALID = -1,
+  SAIR,
+  INDICADOR_DE_TAMANHO,
+  DELIMITADOR_ENTRE_REG,
+  NUMERO_DE_CAMPS_FIXO,
+  VIZUALIZAR_TODOS,
+  VIZUALIZAR_DOMINIO,
+  VIZUALIZAR_REG_RNN,
+  VIZUALIZAR_CAMPO_RNN,
+  MENU = 9
+};
+
 char *lerLinha(FILE *fp, char delimiter);
 
 char *lerNChar(FILE *fp, int n);
@@ -36,5 +49,7 @@ void visualizar(FILE *fSaida);
 int buscaDominio(FILE *fSaida);
 
 void registroRRN(FILE *fSaida);
+
+FILE *fopen_(char *filename, char *openmode);
 
 #endif
