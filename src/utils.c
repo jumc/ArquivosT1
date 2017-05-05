@@ -415,9 +415,9 @@ void imprimirSaudacoes(){
     sleep(1);
     printf("| Bem vindo ao programa responsavel por gerar arquivos de acordo suas\n");
     printf("|preferencias de construcao e por procurar os dados armazenados.\n");
-    sleep(3);
+    sleep(1);
     printf("| Os arquivos gerados possuirao dados de dominios governamentais.\n");
-    sleep(3);
+    sleep(1);
     printf("| Voce pode escolher qualquer opcao abaixo digitando o codigo da ope_\n");
     printf("|racao desejada ou seu nome/palavra chave.\n");
     sleep(3);
@@ -426,19 +426,19 @@ void imprimirSaudacoes(){
     printf("\t(1) Indicador de tamanho\n");
     printf("\t(2) Delimitadores entre registros\n");
     printf("\t(3) Número fixo de campos\n");
-    sleep(3);
+    sleep(2);
     printf("Operacoes para Recuperar arquivo\n");
     sleep(0.5);
     printf("\t(4) Visualizar todos os registros\n");
     printf("\t(5) Busca por domínio\n");        
     printf("\t(6) Registro completo por RRN\n");
     printf("\t(7) Campo de um registro por RRN\n");
-    sleep(3);
+    sleep(2);
     printf("Operacoes Gerais do Sistema\n");
     sleep(0.5);
     printf("\t(9) Exibir menu de operacoes\n");
     printf("\t(0) Sair\n");
-    sleep(3);
+    sleep(2);
     printf("\n| Digite a operacao que deseja realizar: ");
     return;
 }
