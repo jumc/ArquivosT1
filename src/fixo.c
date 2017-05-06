@@ -6,8 +6,6 @@
 #include <regexCustom.h>
 #include <utils.h>
 
-#define TAMANHODOC 19
-#define TAMANHODATA 19
 
 int salvarIndicadorDeTamanho(int tamanho, FILE *fSaida){
 	fwrite(&tamanho, sizeof(int), 1, fSaida);
@@ -32,7 +30,7 @@ int escreverFixo(FILE *fEntrada, FILE *fSaida){
 			return 0;
 
 		// Documento
-		if(salvaInt(TAMANHODOC, fSaida))
+		if(salvaInt(19, fSaida))
 			return 0;
 		if(!salvaCampoFixo(fEntrada, fSaida, 19, "documento"))
 			return 0;	
@@ -50,13 +48,13 @@ int escreverFixo(FILE *fEntrada, FILE *fSaida){
 			return 0;
 
 		// Data Cadastro
-		if(salvaInt(TAMANHODATA, fSaida))
+		if(salvaInt(19, fSaida))
 			return 0;
 		if(!salvaCampoFixo(fEntrada, fSaida, 19, "dataHoraCadastro"))
 			return 0;
 
 		// Data de Atualizacao
-		if(salvaInt(TAMANHODATA, fSaida))
+		if(salvaInt(19, fSaida))
 			return 0;
 		if(!salvaCampoFixo(fEntrada, fSaida, 19, "dataHoraAtualiza"))
 			return 0;
