@@ -193,6 +193,51 @@ int salvaCampoFixo(FILE *fEntrada, FILE *fSaida, int limite, char *nomeCampo){
     return 1;
 }
 
+int salvaCampoVariavelAlt(FILE *fEntrada, FILE *fSaida, char *string, int *tamCampo, char *nomeCampo){
+// Salva um campo de tamanho variavel em um arquivo de saida utilizando
+// o metodo de indicador de tamanho. Retorna a quantidade de bytes escritos
+// caso obtenha sucesso, -1 caso contrario   
+
+    if(match(string, "^\\s*[Nn][Uu][Ll][Ll]\\s*$")){ // Se o valor do campo for nulo...
+        *tamCampo = 0;
+    }
+
+    if(!salvaInt(tamCampo, fSaida)){
+        printf("::Erro ao salvar tamanho do %s::\n", nomeCampo);
+        return -1;
+    }
+
+    if(!salvaString(string, *tamCampo, fSaida)){
+        printf("::Erro ao salvar %s::\n", nomeCampo);
+        return -1;
+    }
+
+    return 1;
+}
+
+
+int salvaCampoFixoAlt(FILE *fEntrada, FILE *fSaida, char *string, int *tamCampo, int limite, char *nomeCampo){
+    
+    if(match(string, "^\\s*[Nn][Uu][Ll][Ll]\\s*$")){ 
+        // Se o valor do campo for nulo...
+        // ------------------------------ PENSAR NO CASO NULO
+        *tamCampo = 0;
+
+    } else {
+        if(*tamCampo != limite) {
+            printf("::%s de tamanho invalido::\n", nomeCampo);
+            return 0;
+        }
+
+        if(!salvaString(string, *tamCampo, fSaida)) {
+            printf("::Erro ao salvar %s::\n", nomeCampo);
+            return 0;
+        }
+    }
+
+    return 1;
+}
+
 int salvaCampoLong(FILE *fEntrada, FILE *fSaida, char *nomeCampo){
 // Salva um campo do tipo long em um arquivo de saida. Retorna 1 caso obtenha sucesso, 0 caso contrario
     long int n;
@@ -271,9 +316,9 @@ void visualizar(FILE *fSaida){
 int buscaDominio(FILE *fSaida){
 // Mostra todos os registros na que contenham o dominio especificado pelo usuario, de acordo com o tipo de organizacao do arquivo de saida
     printf("Buscar pelo dominio: ");
-    char *dominioBuscado = lerLinha(stdin, ' ');
+   /* char *dominioBuscado = lerLinha(stdin, ' ');
     printf("\n");
-    /*int tipo = tipoRegistro(fSaida);  
+    int tipo = tipoRegistro(fSaida);  
 
     switch(tipo):
         case 0:
@@ -292,8 +337,9 @@ int buscaDominio(FILE *fSaida){
         case 4:
             printf("::Dados gravados de maneira incorreta::\n\n");
             return 0;
-            break;*/
+            break;
     return buscaDominioDelimitadores(dominioBuscado, fSaida);
+    */
 }
 
 void registroRRN(FILE *fSaida){
@@ -411,34 +457,34 @@ int lerOperacao(){
 
 
 void imprimirSaudacoes(){
-    printf("|                PROGRAMA GERADOR DE ARQUIVOS\n|\n");
-    sleep(1);
-    printf("| Bem vindo ao programa responsavel por gerar arquivos de acordo suas\n");
-    printf("|preferencias de construcao e por procurar os dados armazenados.\n");
-    sleep(1);
+    printf("|\tPROGRAMA GERADOR DE ARQUIVOS\n|\n");
+    //sleep(0.8);
+    printf("|\tBem vindo ao programa responsavel por gerar arquivos de acordo suas\n");
+    printf("| preferencias de construcao e por procurar os dados armazenados.\n");
+    //sleep(0.8);
     printf("| Os arquivos gerados possuirao dados de dominios governamentais.\n");
-    sleep(1);
-    printf("| Voce pode escolher qualquer opcao abaixo digitando o codigo da ope_\n");
-    printf("|racao desejada ou seu nome/palavra chave.\n");
-    sleep(3);
+    //sleep(0.8);
+    printf("| Voce pode escolher qualquer opcao abaixo digitando o codigo da ope-\n");
+    printf("| racao desejada ou seu nome/palavra chave.\n\n");
+    //sleep(1.5);
     printf("Operacoes para Gerar arquivo\n");
-    sleep(0.5);
+    //sleep(0.5);
     printf("\t(1) Indicador de tamanho\n");
     printf("\t(2) Delimitadores entre registros\n");
-    printf("\t(3) Número fixo de campos\n");
-    sleep(2);
+    printf("\t(3) Número fixo de campos\n\n");
+    //sleep(1.2);
     printf("Operacoes para Recuperar arquivo\n");
-    sleep(0.5);
+    //sleep(0.5);
     printf("\t(4) Visualizar todos os registros\n");
     printf("\t(5) Busca por domínio\n");        
     printf("\t(6) Registro completo por RRN\n");
-    printf("\t(7) Campo de um registro por RRN\n");
-    sleep(2);
+    printf("\t(7) Campo de um registro por RRN\n\n");
+    //sleep(1.2);
     printf("Operacoes Gerais do Sistema\n");
-    sleep(0.5);
+    //sleep(0.5);
     printf("\t(9) Exibir menu de operacoes\n");
-    printf("\t(0) Sair\n");
-    sleep(2);
-    printf("\n| Digite a operacao que deseja realizar: ");
+    printf("\t(0) Sair\n\n");
+    //sleep(1.2);
+    printf("| Digite a operacao que deseja realizar: ");
     return;
 }

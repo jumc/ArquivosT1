@@ -3,4 +3,10 @@
 
 int escreverIndicador(FILE *, FILE *);
 
+void visualizarIndicadores(FILE *fSaida);
+
+bool buscaDominioIndicadores(char *dominioBuscado, FILE *fp);
+
+void registroRRNIndicadores(int rrn, FILE *fp);
+
 #endif

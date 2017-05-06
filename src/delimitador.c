@@ -112,6 +112,7 @@ void visualizarDelimitadores(FILE *fSaida){
         registroDelimitadores(fSaida);	
 		printf("\nRegistro %d\n", counter);
 		counter++;
+		
 		printf("%c", fgetc(fSaida));
 	}
 }
@@ -135,5 +136,4 @@ void registroRRNDelimitadores(int rrn, FILE *fp){
     } else {
     	printf("::Nao foi possivel recuperar o registro::\n");
     }
-
 }
