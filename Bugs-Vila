@@ -1,1 +1,2 @@
 Tamanho do arquivo não conta o \0, devemos salvá-lo no arquivo???
+Leitura do arquivo esta dando segfault
