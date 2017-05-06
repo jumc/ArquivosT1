@@ -70,4 +70,20 @@ int escreverFixo(FILE *fEntrada, FILE *fSaida){
 		fgetc(fEntrada);
 	}
 	return 1;
+	
+	
+}
+
+void registroFixo(FILE *fSaida){
+// Mostra na tela o registro atual do arquivo
+	vizualizaCampoVariavel(fSaida, "Dominio");		
+	vizualizaCampoVariavel(fSaida, "Documento");
+	vizualizaCampoVariavel(fSaida, "Nome");
+	vizualizaCampoVariavel(fSaida, "Cidade");
+	vizualizaCampoVariavel(fSaida, "UF");
+	vizualizaCampoVariavel(fSaida, "dataHoraCadastro");
+	vizualizaCampoVariavel(fSaida, "dataHoraAtualiza");
+	vizualizaCampoVariavel(fSaida, "Ticket");
+	// Pegando o # para ir para o proximo registro
+	fgetc(fSaida);	
 }
