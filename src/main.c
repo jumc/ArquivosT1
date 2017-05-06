@@ -43,20 +43,15 @@
 int main (int argc, char **argv){
     //0. Variaveis e arquivos utilizados no programa...
     int operacao = INVALID;
-    FILE *arquivoDeEntrada = NULL, *arquivoDeSaida = NULL;
 
-    //1. Abrindo os arquivos que serao utilizados no programa...
-    arquivoDeEntrada = fopen_("turmaA-dadosDominios.csv","rb");
-    arquivoDeSaida = fopen_("output.txt","ab+");
-
-    //2. Apresentando o programa ao usuario e inicializando o loop de operacoes...
+    //1. Apresentando o programa ao usuario e inicializando o loop de operacoes...
     imprimirSaudacoes();
     
     while(operacao){
-        //3. Lendo a operacao que o usuario deseja realizar
+        //2. Lendo a operacao que o usuario deseja realizar
         operacao = lerOperacao(stdin);
         
-        //4. Realizando a operacao lida a cima... 
+        //3. Realizando a operacao lida a cima... 
         switch(operacao){     
             case INDICADOR_DE_TAMANHO:
                 if(escreverIndicador(arquivoDeEntrada,  arquivoDeSaida))
@@ -111,9 +106,6 @@ int main (int argc, char **argv){
         }
     }
     
-    //5. Fechando os arquivos abertos e encerrando o programa...
-    fclose(arquivoDeEntrada);
-    fclose(arquivoDeSaida);
-    
+    //4. Encerrando o programa...
     return 0;
 }

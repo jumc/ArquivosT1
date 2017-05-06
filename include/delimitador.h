@@ -1,12 +1,19 @@
 #ifndef _DELIMITADOR_H_
 #define _DELIMITADOR_H_
 
-int escreverDelimitador(FILE *, FILE *);
+/* 
+* -- int escreverDelimitador()
+* Escreve um arquivo de saida com os dados do arquivo de entrada organizados em
+* registros separados por delimitador (#) com campos de tamanho fixo e variavel
+*/
+int escreverDelimitador();
 
-void visualizarDelimitadores(FILE *fSaida);
+void imprimirRegistroDelimitadores(FILE *);
 
-int buscaDominioDelimitadores(char *dominioBuscado, FILE *fp);
+int buscaDominioDelimitadores(char *);
 
-void registroRRNDelimitadores(int rrn, FILE *fSaida);
+void visualizarTodosDelimitadores();
+
+void buscaRRNDelimitadores(int );
 
 #endif

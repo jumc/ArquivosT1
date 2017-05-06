@@ -13,7 +13,7 @@
 --> Mascara para documento
 --> Mascara para timestamp
 --> Visualizacao de nulo
---> Truncar campos fixos
+--> Truncar campo fixos
 --> Visualizar acentos e caracteres especiais
 --> Tirar espacos e colocar em upper na comparacao da busca
 */
@@ -154,6 +154,7 @@ int salvaCampoVariavel(FILE *fEntrada, FILE *fSaida, char *nomeCampo){
         printf("::Erro ao salvar tamanho do %s::\n", nomeCampo);
         return -1;
     }
+    printf("%s\n", string);
     if(!salvaString(string, tamCampo, fSaida)){
         free(string);
         printf("::Erro ao salvar %s::\n", nomeCampo);
@@ -317,40 +318,296 @@ void visualizar(FILE *fSaida){
     visualizarDelimitadores(fSaida);
 }
 
-int buscaDominio(FILE *fSaida){
-// Mostra todos os registros na que contenham o dominio especificado pelo usuario, de acordo com o tipo de organizacao do arquivo de saida
-    printf("Buscar pelo dominio: ");
-   /* char *dominioBuscado = lerLinha(stdin, ' ');
-    printf("\n");
-    int tipo = tipoRegistro(fSaida);  
-    switch(tipo):
-        case 0:
-             return visualizarIndicador(fSaida);
-            break;
-        case 1: 
-            return buscaDominioDelimitadores(dominioBuscado, fSaida);
-            break;
-        case 2:
-            return visualizarFixo(fSaida);
-            break;
-        case 3:
-            printf("::Arquivo vazio::\n\n");
-            return 0;
-            break;
-        case 4:
-            printf("::Dados gravados de maneira incorreta::\n\n");
-            return 0;
-            break;
-    return buscaDominioDelimitadores(dominioBuscado, fSaida);
-    */
+bool buscaTotalDominioIndicador(char *dominioProcurado,FILE *arquivo){
+    //0. Variaveis da funcao
+    bool flag_encontrou = FALSE;
+    int tamanhoDoRegistro = 0, tamanhoDoCampo = 0, RRN = 0;  
+    long ticket = 0, bytesLidos = 0;
+    char *dominio = NULL, *campo = NULL;
+
+    //1. Iniciando a busca em um arquivo com indicadores de tamanho...
+    while(!feof(arquivo)){
+        //a. Lendo o tamanho do registro...
+        bytesLidos += fread(&tamanhoDoRegistro,sizeof(int),1,arquivo);
+        //b. Lendo o tamanho do dominio...
+        bytesLidos += fread(&tamanhoDoCampo,sizeof(int),1,arquivo);
+        //c. Lendo o dominio...
+        dominio = (char *)malloc(sizeof(char)*tamanhoDoCampo);
+        bytesLidos += fread(&dominio,sizeof(char),tamanhoDoCampo,arquivo);
+        
+        //d. Atualizando o tamanho do registro...
+        tamanhoDoRegistro -= (tamanhoDoCampo + sizeof(int));
+        
+        //e. Caso o dominio do registro seja o dominio procurado imprimisse na
+        //tela o registro completo...
+        //- Caso contrario, pula-se para o proximo dominio...
+        if(strcmp(dominio,dominioProcurado)==0){
+            //atualizando a flag de retorno
+            flag_encontrou = TRUE;
+            
+            //i. imprimindo o dominio
+            printf("RRN = %d\nDominio: %s\n",RRN,dominio);
+            
+            //ii. imprimindo documento
+                tamanhoDoCampo = 19;
+                campo = (char *)malloc(sizeof(char)*tamanhoDoCampo);
+                    bytesLidos += fread(&campo,sizeof(char),tamanhoDoRegistro,arquivo);
+                    printf("Documento: %s\n",campo);
+                free(campo);
+            //iii. imprimindo nome
+                bytesLidos += fread(&tamanhoDoCampo,sizeof(int),1,arquivo);
+                campo = (char *)malloc(sizeof(char)*tamanhoDoCampo);
+                    bytesLidos += fread(&campo,sizeof(char),tamanhoDoRegistro,arquivo);
+                    printf("Nome: %s\n",campo);
+                free(campo);
+            //iv. imprimindo cidade
+                bytesLidos += fread(&tamanhoDoCampo,sizeof(int),1,arquivo);
+                campo = (char *)malloc(sizeof(char)*tamanhoDoCampo);
+                    bytesLidos += fread(&campo,sizeof(char),tamanhoDoRegistro,arquivo);
+                    printf("Cidade: %s\n",campo);
+                free(campo);            
+            //v. imprimindo uf
+                bytesLidos += fread(&tamanhoDoCampo,sizeof(int),1,arquivo);
+                campo = (char *)malloc(sizeof(char)*tamanhoDoCampo);
+                    bytesLidos += fread(&campo,sizeof(char),tamanhoDoRegistro,arquivo);
+                    printf("UF: %s\n",campo);
+                free(campo);            
+            //vi. imprimindo data hora
+                tamanhoDoCampo = 19;
+                campo = (char *)malloc(sizeof(char)*tamanhoDoCampo);
+                    bytesLidos += fread(&campo,sizeof(char),tamanhoDoRegistro,arquivo);
+                    printf("Data e Hora (Criacao): %s\n",campo);
+                free(campo);           
+            //vii. imprimindo data hora atualiza
+                tamanhoDoCampo = 19;
+                campo = (char *)malloc(sizeof(char)*tamanhoDoCampo);
+                    bytesLidos += fread(&campo,sizeof(char),tamanhoDoRegistro,arquivo);
+                    printf("Data e Hora (Atualizacao): %s\n",campo);
+                free(campo);            
+            //viii. imprimindo ticket
+                bytesLidos += fread(&ticket,sizeof(long),1,arquivo);
+                printf("Ticket: %ld\n",ticket);
+        }
+        else
+            fseek(arquivo,SEEK_CUR,tamanhoDoRegistro);
+        
+        //f. Incrementando o RRN...
+        RRN++;
+        
+        //g. Liberando o dominio lido e continuando a buscar...
+        free(dominio);
+    }
+    
+    //2. Encerrando a busca...
+    return flag_encontrou;
+}
+
+bool buscaTotalDominioDelimtitador(char *dominioProcurado, FILE *arquivo){
+    //0. Variaveis da funcao
+    bool flag_encontrou = FALSE, flag_imprime = FALSE;
+    char delimitador = '#';
+    int tamanhoDoRegistro = 0, tamanhoDoCampo = 0, RRN = 0;  
+    long ticket = 0, bytesLidos = 0;
+    char *dominio = NULL, *campo = NULL;
+
+    //1. Iniciando a busca em um arquivo com indicadores delimitadores de
+    //registros...
+    while(!feof(arquivo)){
+        //a. Lendo o tamanho do dominio...
+        bytesLidos += fread(&tamanhoDoCampo,sizeof(int),1,arquivo);
+        //b. Lendo o dominio...
+        dominio = (char *)malloc(sizeof(char)*tamanhoDoCampo);
+        bytesLidos += fread(&dominio,sizeof(char),tamanhoDoCampo,arquivo);
+        
+        //c. Caso o dominio do registro seja o dominio procurado imprimisse na
+        //tela o registro completo...
+        //- Caso contrario, pula-se para o proximo dominio...
+        if(strcmp(dominio,dominioProcurado)==0){
+            flag_encontrou = TRUE;
+            flag_imprime = TRUE;
+        }
+            
+            //i. imprimindo o dominio caso o dominio lido seja o dominio procurado
+            if(flag_imprime) printf("RRN = %d\nDominio: %s\n",RRN,dominio);
+            //ii. imprimindo documento caso o dominio lido seja o dominio procurado
+            tamanhoDoCampo = 19;
+            campo = (char *)malloc(sizeof(char)*tamanhoDoCampo);
+            bytesLidos += fread(&campo,sizeof(char),tamanhoDoRegistro,arquivo);
+            if(flag_imprime) printf("Documento: %s\n",campo);
+            free(campo);
+            //iii. imprimindo nome caso o dominio lido seja o dominio procurado
+            bytesLidos += fread(&tamanhoDoCampo,sizeof(int),1,arquivo);
+            campo = (char *)malloc(sizeof(char)*tamanhoDoCampo);
+            bytesLidos += fread(&campo,sizeof(char),tamanhoDoRegistro,arquivo);
+            if(flag_imprime) printf("Nome: %s\n",campo);
+            free(campo);
+            //iv. imprimindo cidade caso o dominio lido seja o dominio procurado
+            bytesLidos += fread(&tamanhoDoCampo,sizeof(int),1,arquivo);
+            campo = (char *)malloc(sizeof(char)*tamanhoDoCampo);
+            bytesLidos += fread(&campo,sizeof(char),tamanhoDoRegistro,arquivo);
+            if(flag_imprime) printf("Cidade: %s\n",campo);
+            free(campo);            
+            //v. imprimindo uf caso o dominio lido seja o dominio procurado
+            bytesLidos += fread(&tamanhoDoCampo,sizeof(int),1,arquivo);
+            campo = (char *)malloc(sizeof(char)*tamanhoDoCampo);
+            bytesLidos += fread(&campo,sizeof(char),tamanhoDoRegistro,arquivo);
+            if(flag_imprime) printf("UF: %s\n",campo);
+            free(campo);            
+            //vi. imprimindo data hora caso o dominio lido seja o dominio procurado
+            tamanhoDoCampo = 19;
+            campo = (char *)malloc(sizeof(char)*tamanhoDoCampo);
+            bytesLidos += fread(&campo,sizeof(char),tamanhoDoRegistro,arquivo);
+            if(flag_imprime) printf("Data e Hora (Criacao): %s\n",campo);
+            free(campo);           
+            //vii. imprimindo data hora atualiza caso o dominio lido seja o dominio procurado
+            tamanhoDoCampo = 19;
+            campo = (char *)malloc(sizeof(char)*tamanhoDoCampo);
+            bytesLidos += fread(&campo,sizeof(char),tamanhoDoRegistro,arquivo);
+            if(flag_imprime) printf("Data e Hora (Atualizacao): %s\n",campo);
+            free(campo);            
+            //viii. imprimindo ticket caso o dominio lido seja o dominio procurado
+            bytesLidos += fread(&ticket,sizeof(long),1,arquivo);
+            if(flag_imprime)printf("Ticket: %ld\n",ticket);
+        
+        //d. Incrementando o RRN...
+        delimitador = fgetc(arquivo);
+        RRN++;
+        
+        //e. Liberando o dominio lido e continuando a buscar...
+        free(dominio);
+        flag_imprime = FALSE;
+    }
+    
+    //2. Encerrando a busca...
+    return flag_encontrou;
+}
+
+bool buscaTotalDominioCFixos(char *dominioProcurado, FILE *arquivo){
+    //0. Variaveis da funcao
+    bool flag_encontrou = FALSE, flag_imprime = FALSE;
+    int tamanhoDoRegistro = 0, tamanhoDoCampo = 0, RRN = 0;  
+    long ticket = 0, bytesLidos = 0;
+    char *dominio = NULL, *campo = NULL;
+
+    //1. Iniciando a busca em um arquivo com numero fixo de campo...
+    while(!feof(arquivo)){
+        //a. Lendo o tamanho do dominio...
+        bytesLidos += fread(&tamanhoDoCampo,sizeof(int),1,arquivo);
+        //b. Lendo o dominio...
+        dominio = (char *)malloc(sizeof(char)*tamanhoDoCampo);
+        bytesLidos += fread(&dominio,sizeof(char),tamanhoDoCampo,arquivo);
+        
+        //c. Caso o dominio do registro seja o dominio procurado imprimisse na
+        //tela o registro completo...
+        //- Caso contrario, pula-se para o proximo dominio...
+        if(strcmp(dominio,dominioProcurado)==0){
+            flag_encontrou = TRUE;
+            flag_imprime = TRUE;
+        }
+            
+            //i. imprimindo o dominio caso o dominio lido seja o dominio procurado
+            if(flag_imprime) printf("RRN = %d\nDominio: %s\n",RRN,dominio);
+            //ii. imprimindo documento caso o dominio lido seja o dominio procurado
+            tamanhoDoCampo = 19;
+            campo = (char *)malloc(sizeof(char)*tamanhoDoCampo);
+            bytesLidos += fread(&campo,sizeof(char),tamanhoDoRegistro,arquivo);
+            if(flag_imprime) printf("Documento: %s\n",campo);
+            free(campo);
+            //iii. imprimindo nome caso o dominio lido seja o dominio procurado
+            bytesLidos += fread(&tamanhoDoCampo,sizeof(int),1,arquivo);
+            campo = (char *)malloc(sizeof(char)*tamanhoDoCampo);
+            bytesLidos += fread(&campo,sizeof(char),tamanhoDoRegistro,arquivo);
+            if(flag_imprime) printf("Nome: %s\n",campo);
+            free(campo);
+            //iv. imprimindo cidade caso o dominio lido seja o dominio procurado
+            bytesLidos += fread(&tamanhoDoCampo,sizeof(int),1,arquivo);
+            campo = (char *)malloc(sizeof(char)*tamanhoDoCampo);
+            bytesLidos += fread(&campo,sizeof(char),tamanhoDoRegistro,arquivo);
+            if(flag_imprime) printf("Cidade: %s\n",campo);
+            free(campo);            
+            //v. imprimindo uf caso o dominio lido seja o dominio procurado
+            bytesLidos += fread(&tamanhoDoCampo,sizeof(int),1,arquivo);
+            campo = (char *)malloc(sizeof(char)*tamanhoDoCampo);
+            bytesLidos += fread(&campo,sizeof(char),tamanhoDoRegistro,arquivo);
+            if(flag_imprime) printf("UF: %s\n",campo);
+            free(campo);            
+            //vi. imprimindo data hora caso o dominio lido seja o dominio procurado
+            tamanhoDoCampo = 19;
+            campo = (char *)malloc(sizeof(char)*tamanhoDoCampo);
+            bytesLidos += fread(&campo,sizeof(char),tamanhoDoRegistro,arquivo);
+            if(flag_imprime) printf("Data e Hora (Criacao): %s\n",campo);
+            free(campo);           
+            //vii. imprimindo data hora atualiza caso o dominio lido seja o dominio procurado
+            tamanhoDoCampo = 19;
+            campo = (char *)malloc(sizeof(char)*tamanhoDoCampo);
+            bytesLidos += fread(&campo,sizeof(char),tamanhoDoRegistro,arquivo);
+            if(flag_imprime) printf("Data e Hora (Atualizacao): %s\n",campo);
+            free(campo);            
+            //viii. imprimindo ticket caso o dominio lido seja o dominio procurado
+            bytesLidos += fread(&ticket,sizeof(long),1,arquivo);
+            if(flag_imprime)printf("Ticket: %ld\n",ticket);
+        
+        //d. Incrementando o RRN...
+        RRN++;
+        
+        //e. Liberando o dominio lido e continuando a buscar...
+        free(dominio);
+        flag_imprime = FALSE;
+    }
+    
+    //2. Encerrando a busca...
+    return flag_encontrou;
+}
+        
+
+// --- void buscaDominio(char *dominio)
+// Imprime na tela todos os registros que contenham o dominio especificado pelo 
+//usuario realizando uma busca de acordo com o tipo de organizacao do arquivo 
+//aberto para busca
+void buscaDominio(char *dominio){
+    //0. Variaveis da funcao
+    int tipoDoArquivo = INVALID, bytesLidos = 0;
+    FILE *arquivo = NULL;
+    
+    //1. Abrindo o arquivo que sera usado na busca...
+    printf("Buscar pelo dominio: %s\n",dominio);
+    arquivo = fopen_("output.txt","rb");
+    
+    //2. Verificando o tipo do arquivo e iniciando a busca correspondente ao
+    //tipo lido...
+    bytesLidos += fread(&tipoDoArquivo,sizeof(int),1,arquivo);
+    switch(tipoDoArquivo){
+        case INDICADOR_DE_TAMANHO:
+            if(!buscaTotalDominioIndicador(dominio,arquivo))
+                printf("::Dominio nao encontrado::\n");
+        break;
+        
+        case DELIMITADOR_ENTRE_REG:
+            if(!buscaTotalDominioDelimtitador(dominio,arquivo))
+                printf("::Dominio nao encontrado::\n");
+        break;
+        
+        case NUMERO_DE_CAMPS_FIXO:
+            if(!buscaTotalDominioCFixos(dominio,arquivo))
+                printf("::Dominio nao encontrado::\n");
+        break;
+        
+        default:
+            printf("::Erro ao ler o tipo do arquivo para busca::\n");
+        break;
+    }
+    
+    //3. Fechando o arquivo aberto e encerrando a funcao...
+    fclose(arquivo);
+    return;
 }
 
 void registroRRN(FILE *fSaida){
     // Mostra o registro com o RRN especificado pelo usuario, de acordo com o tipo de organizacao do arquivo de saida
-    printf("Buscar pelo RRN: ");
+    /*printf("Buscar pelo RRN: ");
     int rrn = lerCharToInt(stdin);
     printf("\n");
-    /*int tipo = tipoRegistro(fSaida);  
+    int tipo = tipoRegistro(fSaida);  
     switch(tipo):
         case 0:
             registroRRNIndicador(fSaida);
@@ -366,8 +623,9 @@ void registroRRN(FILE *fSaida){
             break;
         case 4:
             printf("::Dados gravados de maneira incorreta::\n\n");
-            break;*/
+            break;
     registroRRNDelimitadores(rrn, fSaida);
+    */
 }
 
 FILE *fopen_(char *filename, char *openmode){
@@ -390,7 +648,7 @@ int lerOperacao(){
             //(2) gerar arquivo - delimitador entre registros
             if(match(linha,"^\\s*[a-zA-Z ]*[Dd]+[Ee]+[Ll]+[Ii]+[Mm]+[Ii]+[Tt]+[Aa]+[Dd]+[Oo]+[Rr]+[Ee]*[Ss]*\\s*[a-zA-Z ]*$"))
                 operacao = DELIMITADOR_ENTRE_REG;
-            //(3) gerar arquivo - campos fixos
+            //(3) gerar arquivo - campo fixos
             if(match(linha,"^\\s*[a-zA-Z ]*[Cc]+[Aa]+[Mm]+[Pp]+[Oo]+[Ss]*\\s+[a-zA-Z ]*[Ff]+[Ii]+[Xx]+[Oo]+[Ss]+\\s*[a-zA-Z ]*$"))
                 operacao = NUMERO_DE_CAMPS_FIXO;
             if(match(linha,"^\\s*[a-zA-Z ]*[Ff]+[Ii]+[Xx]+[Oo]+[Ss]*\\s+[a-zA-Z ]*[Cc]+[Aa]+[Mm]+[Pp]+[Oo]+[Ss]*\\s*[a-zA-Z ]*$"))
@@ -414,7 +672,7 @@ int lerOperacao(){
             //(2) gerar arquivo - delimitador entre registros
             if(match(linha,"^\\s*[a-zA-Z ]*[Dd]+[Ee]+[Ll]+[Ii]+[Mm]+[Ii]+[Tt]+[Aa]+[Dd]+[Oo]+[Rr]+\\s*[a-zA-Z ]*$"))
                 operacao = DELIMITADOR_ENTRE_REG;
-            //(3) gerar arquivo - campos fixos
+            //(3) gerar arquivo - campo fixos
             if(match(linha,"^\\s*[a-zA-Z ]*[Ff]+[Ii]+[Xx]+[Oo]+\\s*[a-zA-Z ]*$"))
                 operacao = NUMERO_DE_CAMPS_FIXO;
         }
@@ -457,7 +715,6 @@ int lerOperacao(){
     return operacao;
 }
 
-
 void imprimirSaudacoes(){
     printf("|\tPROGRAMA GERADOR DE ARQUIVOS\n|\n");
     //sleep(0.8);
@@ -473,7 +730,7 @@ void imprimirSaudacoes(){
     //sleep(0.5);
     printf("\t(1) Indicador de tamanho\n");
     printf("\t(2) Delimitadores entre registros\n");
-    printf("\t(3) Número fixo de campos\n\n");
+    printf("\t(3) Número fixo de campo\n\n");
     //sleep(1.2);
     printf("Operacoes para Recuperar arquivo\n");
     //sleep(0.5);
