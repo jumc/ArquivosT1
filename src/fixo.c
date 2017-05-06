@@ -6,12 +6,16 @@
 #include <regexCustom.h>
 #include <utils.h>
 
-#define TAMANHODOC 20
-#define TAMANHODATA 20
+#define TAMANHODOC 19
+#define TAMANHODATA 19
+
+int salvarIndicadorDeTamanho(int tamanho, FILE *fSaida){
+	fwrite(&tamanho, sizeof(int), 1, fSaida);
+}
 
 int escreverFixo(FILE *fEntrada, FILE *fSaida){
     // Escreve um arquivo de saida com os dados do arquivo de entrada organizado
-    //em numero fixo de campos, 
+    //em numero fixo de campos, e com indicadores de tamanho dos campos
 	long tamEntrada;
 	
 	// Descobrindo tamanho do arquivo de entrada
@@ -20,22 +24,23 @@ int escreverFixo(FILE *fEntrada, FILE *fSaida){
 	rewind(fEntrada);
 
 	freopen("output.txt", "wb+", fSaida);
+	//Este laco lê um registro e salva o tamanho do campo e seu conteudo
+	//fazendo esse algoritimo campo a campo
 	while(ftell(fEntrada) != tamEntrada){
 		// Dominio	
 		if(salvaCampoVariavel(fEntrada, fSaida, "dominio") == -1)
 			return 0;
 
 		// Documento
-		tamanho = TAMANHODOC;
-		fwrite(&tamanho, sizeof(int), 1, fSaida);
-		
+		if(salvaInt(TAMANHODOC, fSaida))
+			return 0;
 		if(!salvaCampoFixo(fEntrada, fSaida, 19, "documento"))
 			return 0;	
 
 		// Nome
 		if(salvaCampoVariavel(fEntrada, fSaida, "nome") == -1)
 			return 0;
-
+			
 		// Cidade
 		if(salvaCampoVariavel(fEntrada, fSaida, "cidade") == -1)
 			return 0;
@@ -44,23 +49,21 @@ int escreverFixo(FILE *fEntrada, FILE *fSaida){
 		if(salvaCampoVariavel(fEntrada, fSaida, "UF") == -1)
 			return 0;
 
-		// Data-hora cadastro
-		tamanho = TAMANHODATA;
-		fwrite(&tamanho, sizeof(int), 1, fSaida);
-		
+		// Data Cadastro
+		if(salvaInt(TAMANHODATA, fSaida))
+			return 0;
 		if(!salvaCampoFixo(fEntrada, fSaida, 19, "dataHoraCadastro"))
 			return 0;
 
-		// Data-hora atualiza;
-		tamanho = TAMANHODATA;
-		fwrite(&tamanho, sizeof(int), 1, fSaida);
-		
+		// Data de Atualizacao
+		if(salvaInt(TAMANHODATA, fSaida))
+			return 0;
 		if(!salvaCampoFixo(fEntrada, fSaida, 19, "dataHoraAtualiza"))
 			return 0;
 
 		// Ticket
-		tamanho = sizeof(long);
-		fwrite(&tamanho, sizeof(int), 1, fSaida);
+		if(salvaInt(sizeof(long), fSaida))
+			return 0;
 		
 		if(!salvaCampoLong(fEntrada, fSaida, "ticket"))
 			return 0;
