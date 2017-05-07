@@ -1,0 +1,5 @@
+                                Campos Fixos : Escolhas
+
+Na organizacao em registros de tamanho, a forma de diferenciar os campos do registro foi o indicador de tamanho de campo,
+pois apesar de gastar 3 Bytes a mais que o delimitador, os campos variados usariam o indicador de tamanho da mesma forma
+tornando a leitura um pouco complicada (ler delimitador + ler tamanho do campo) e salvaria um Byte a mais para esses campos.
