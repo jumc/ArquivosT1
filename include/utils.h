@@ -1,6 +1,8 @@
 #ifndef _UTILS_H_
 #define _UTILS_H_
 
+#define bool int
+
 enum{
   INVALID = -1,
   SAIR,
@@ -12,6 +14,11 @@ enum{
   VIZUALIZAR_REG_RRN,
   VIZUALIZAR_CAMPO_RRN,
   MENU = 9
+};
+
+enum{
+  FALSE,
+  TRUE
 };
 
 char *lerLinha(FILE *fp, char delimiter);
@@ -41,6 +48,10 @@ char *campoVariavel(FILE *fp);
 void vizualizaCampoVariavel(FILE *fp, char *nomeCampo);
 
 void vizualizaCampoFixo(FILE *fp, char *nomeCampo, int tam);
+
+int salvaCampoVariavelAlt(FILE *fEntrada, FILE *fSaida, char *string, int *tamCampo, char *nomeCampo);
+
+int salvaCampoFixoAlt(FILE *fEntrada, FILE *fSaida, char *string, int *tamCampo, int limite, char *nomeCampo);
 
 void vizualizaCampoLong(FILE *fp, char *nomeCampo);
 

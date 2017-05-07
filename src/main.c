@@ -59,14 +59,14 @@ int main (int argc, char **argv){
         //4. Realizando a operacao lida a cima... 
         switch(operacao){     
             case INDICADOR_DE_TAMANHO:
-                if(escreverIndicador( arquivoDeEntrada,  arquivoDeSaida))
+                if(escreverIndicador(arquivoDeEntrada,  arquivoDeSaida))
                     printf("Escrita realizada com sucesso\n\n");
                 else
                     printf(":: Erro na escrita ::\n\n");
             break;
                 
             case DELIMITADOR_ENTRE_REG:
-                if(escreverDelimitador( arquivoDeEntrada,  arquivoDeSaida))
+                if(escreverDelimitador(arquivoDeEntrada,  arquivoDeSaida))
                     printf("Escrita realizada com sucesso\n\n");
                 else
                     printf(":: Erro na escrita ::\n\n");
@@ -98,7 +98,7 @@ int main (int argc, char **argv){
                 
             case SAIR:
                 printf("| Obrigado por usar nosso programa! Ate a proxima!\n --- \n");
-                printf("|    SCC0215 . Organização de Arquivos . Turma A\n");
+                printf("| SCC0215 . Organização de Arquivos . Turma A\n");
                 printf("| Gabriel Cyrillo dos Santos Cerqueira - nº\n");
                 printf("| Joao Pedro Ramos Belmiro             - nº\n");
                 printf("| Juliana de Mello Crivelli            - nº 8909303\n");
