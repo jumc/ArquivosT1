@@ -7,9 +7,6 @@
 #include <utils.h>
 
 
-int salvarIndicadorDeTamanho(int tamanho, FILE *fSaida){
-	fwrite(&tamanho, sizeof(int), 1, fSaida);
-}
 
 int escreverFixo(FILE *fEntrada, FILE *fSaida){
     // Escreve um arquivo de saida com os dados do arquivo de entrada organizado
@@ -30,7 +27,7 @@ int escreverFixo(FILE *fEntrada, FILE *fSaida){
 			return 0;
 
 		// Documento
-		if(salvaInt(19, fSaida))
+		if(!salvaInt(19, fSaida))
 			return 0;
 		if(!salvaCampoFixo(fEntrada, fSaida, 19, "documento"))
 			return 0;	
@@ -84,11 +81,9 @@ void registroFixo(FILE *fSaida){
 	vizualizaCampoVariavel(fSaida, "dataHoraCadastro");
 	vizualizaCampoVariavel(fSaida, "dataHoraAtualiza");
 	vizualizaCampoVariavel(fSaida, "Ticket");
-	// Pegando o # para ir para o proximo registro
-	fgetc(fSaida);	
 }
 
-void visualizarDelimitadores(FILE *fSaida){
+void visualizarFixo(FILE *fSaida){
 // Mostra em tela todos os registros armazenados
 
 	// O que esta acontecendo com o registro 167?

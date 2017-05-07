@@ -1,3 +1,0 @@
-Tamanho do arquivo não conta o \0, devemos salvá-lo no arquivo???
-Leitura do arquivo esta dando segfault
-Na hora da visualizacao estamos usando !feof, o que pode imprimir 2 vezes o ultimo registro
