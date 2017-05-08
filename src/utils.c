@@ -105,7 +105,6 @@ void lerCampo(char **string, int *tamCampo, FILE *fEntrada){
 // Le um campo do arquivo de entrada, isto e, da posicao atual do ponteiro de arquivo ate o proximo ';' fornecendo o conteudo do campo e seu tamanho 
     *string = lerLinha(fEntrada, ';');
     *tamCampo = strlen(*string);
-    printf("%d\n", *tamCampo);
 }
 
 int salvaString(char *string, int tamCampo, FILE *fSaida){
