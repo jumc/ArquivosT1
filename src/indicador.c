@@ -41,7 +41,7 @@ int escreverIndicador(FILE *fEntrada, FILE *fSaida){
 		for (i = 0; i < 7; i++) {
 			lerCampo(&(bufferDeString[i]), &(bufferDeInt[i]), fEntrada);
 			tamRegistro += bufferDeInt[i];
-			printf("%s - %d\n", bufferDeString[i], bufferDeInt[i]);
+			//printf("%s - %d\n", bufferDeString[i], bufferDeInt[i]);
 		}
 
 		// Soma oito do tamannho do long int
