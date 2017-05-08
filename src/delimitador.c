@@ -11,7 +11,7 @@
 int escreverDelimitador(){
 	//0. Variaveis da funcao...
 	char delimitador = '#';
-<<<<<<< HEAD
+//<<<<<<< HEAD
 	int type = DELIMITADOR_ENTRE_REG;
 
 	fwrite(&type, sizeof(int), 1, fSaida);
@@ -23,7 +23,7 @@ int escreverDelimitador(){
 	while(ftell(fEntrada) != tamEntrada){
 		// Dominio	
 		if(salvaCampoVariavel(fEntrada, fSaida, "dominio") == -1)
-=======
+//=======
 	long tamanhoDaEntrada = 0;
 	FILE *arquivoDeEntrada = NULL, *arquivoDeSaida = NULL;
 	
@@ -39,7 +39,7 @@ int escreverDelimitador(){
 	while(ftell(arquivoDeEntrada) != tamanhoDaEntrada){
 		//a. escrevendo o Dominio	
 		if(salvaCampoVariavel(arquivoDeEntrada, arquivoDeSaida, "dominio") == -1)
->>>>>>> Realizei as correcoes dos warnings do delimitador.*, contudo essas alteracoes implicam numa mudanca para passagem de argumento em muitas funcoes ja implementadas
+//>>>>>>> Realizei as correcoes dos warnings do delimitador.*, contudo essas alteracoes implicam numa mudanca para passagem de argumento em muitas funcoes ja implementadas
 			return 0;
 
 		//b. escrevendo o numero Documento
@@ -149,12 +149,12 @@ void visualizarTodosDelimitadores(){
         imprimirRegistroDelimitadores(arquivo);	
 		printf("\nRegistro %d\n", counter);
 		counter++;
-<<<<<<< HEAD
+//<<<<<<< HEAD
 		
 		printf("%c", fgetc(fSaida));
-=======
+//=======
 		printf("%c", fgetc(arquivo));
->>>>>>> Realizei as correcoes dos warnings do delimitador.*, contudo essas alteracoes implicam numa mudanca para passagem de argumento em muitas funcoes ja implementadas
+//>>>>>>> Realizei as correcoes dos warnings do delimitador.*, contudo essas alteracoes implicam numa mudanca para passagem de argumento em muitas funcoes ja implementadas
 	}
 	
 	//3. Fechando os arquivos e encerrando a funcao...
@@ -188,11 +188,11 @@ void buscaRRNDelimitadores(int rrn){
     } else {
     	printf("::Nao foi possivel recuperar o registro::\n");
     }
-<<<<<<< HEAD
-=======
+//<<<<<<< HEAD
+//=======
     
     //4. Fechando o arquivo e retornando a funcao...
     fclose(arquivo);
 	return;
->>>>>>> Realizei as correcoes dos warnings do delimitador.*, contudo essas alteracoes implicam numa mudanca para passagem de argumento em muitas funcoes ja implementadas
+//>>>>>>> Realizei as correcoes dos warnings do delimitador.*, contudo essas alteracoes implicam numa mudanca para passagem de argumento em muitas funcoes ja implementadas
 }
