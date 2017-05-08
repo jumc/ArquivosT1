@@ -12,5 +12,5 @@ debug:
 	@valgrind --tool=memcheck --leak-check=full --show-leak-kinds=all ./main
 
 test:
-	@gcc ./src/*c -O3 -o main -Wall -lm -I./include
+	@gcc ./src/*c -O3 -o main -Wall -lm -I./include -g
 	@valgrind ./main

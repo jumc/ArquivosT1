@@ -6,19 +6,19 @@
 #include <regexCustom.h>
 #include <utils.h>
 
-
-
 int escreverFixo(FILE *fEntrada, FILE *fSaida){
     // Escreve um arquivo de saida com os dados do arquivo de entrada organizado
     //em numero fixo de campos, e com indicadores de tamanho dos campos
 	long tamEntrada;
-	
+	int type = NUMERO_DE_CAMPS_FIXO;
+
+	fwrite(&type, sizeof(int), 1, fSaida);
+
 	// Descobrindo tamanho do arquivo de entrada
 	fseek(fEntrada, 0, SEEK_END);
 	tamEntrada = ftell(fEntrada);
 	rewind(fEntrada);
 
-	freopen("output.txt", "wb+", fSaida);
 	//Este laco lê um registro e salva o tamanho do campo e seu conteudo
 	//fazendo esse algoritimo campo a campo
 	while(ftell(fEntrada) != tamEntrada){
@@ -29,6 +29,7 @@ int escreverFixo(FILE *fEntrada, FILE *fSaida){
 		// Documento
 		if(!salvaInt(19, fSaida))
 			return 0;
+
 		if(!salvaCampoFixo(fEntrada, fSaida, 19, "documento"))
 			return 0;	
 
