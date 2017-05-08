@@ -9,13 +9,14 @@ int escreverDelimitador(FILE *fEntrada, FILE *fSaida){
 // Escreve um arquivo de saida com os dados do arquivo de entrada organizados em registros separados por delimitador (#) com campos de tamanho fixo e variavel
 	long tamEntrada;
 	char delimitador = '#';
-	
+	int type = DELIMITADOR_ENTRE_REG;
+
+	fwrite(&type, sizeof(int), 1, fSaida);
 	// Descobrindo tamanho do arquivo de entrada
 	fseek(fEntrada, 0, SEEK_END);
 	tamEntrada = ftell(fEntrada);
 	rewind(fEntrada);
-
-	freopen("output.txt", "wb+", fSaida);
+	
 	while(ftell(fEntrada) != tamEntrada){
 		// Dominio	
 		if(salvaCampoVariavel(fEntrada, fSaida, "dominio") == -1)

@@ -6,18 +6,32 @@
 #include <regexCustom.h>
 #include <utils.h>
 
+int destroiBuffers(char **bufferDeString, int *bufferDeInt, int size){
+	int i;
+
+	// Liberando a memoria das string utilizadas. o espaço usado 
+	for (i = 0; i < 7; i++) {
+		free(bufferDeString[i]);
+	}
+
+	free(bufferDeString);
+	free(bufferDeInt);
+
+	return 0;
+} 
+
 int escreverIndicador(FILE *fEntrada, FILE *fSaida){
 	char **bufferDeString = (char **) malloc(7 * sizeof(char *));
 	int *bufferDeInt = (int *) malloc(7 * sizeof(int));
 	int i, tamEntrada, tamRegistro = 0;
+	int type = INDICADOR_DE_TAMANHO;
+
+	fwrite(&type, sizeof(int), 1, fSaida);
 
 	// Descobrindo tamanho do arquivo de entrada
 	fseek(fEntrada, 0, SEEK_END);
 	tamEntrada = ftell(fEntrada);
 	rewind(fEntrada);
-
-	if(freopen("output.txt", "wb+", fSaida) == NULL)
-		return 1;
 
 	while(ftell(fEntrada) != tamEntrada) {
 		// Lendo os dados da memoria, armazenando-os em um buffer. Parao o indicador de tamanho
@@ -27,7 +41,7 @@ int escreverIndicador(FILE *fEntrada, FILE *fSaida){
 		for (i = 0; i < 7; i++) {
 			lerCampo(&(bufferDeString[i]), &(bufferDeInt[i]), fEntrada);
 			tamRegistro += bufferDeInt[i];
-			//printf("%s\n", bufferDeString[i]);
+			printf("%s - %d\n", bufferDeString[i], bufferDeInt[i]);
 		}
 
 		// Soma oito do tamannho do long int
@@ -36,35 +50,35 @@ int escreverIndicador(FILE *fEntrada, FILE *fSaida){
 
 		// Dominio	
 		if(salvaCampoVariavelAlt(fEntrada, fSaida, bufferDeString[0], &bufferDeInt[0], "dominio") == -1)
-			return 0;
+			return destroiBuffers(bufferDeString, bufferDeInt, 7);
 
 		// Documento
 		if(!salvaCampoFixoAlt(fEntrada, fSaida, bufferDeString[1], &bufferDeInt[1], 19, "documento"))
-			return 0;
+			return destroiBuffers(bufferDeString, bufferDeInt, 7);
 
 		// Nome
 		if(salvaCampoVariavelAlt(fEntrada, fSaida, bufferDeString[2], &bufferDeInt[2], "nome") == -1)
-			return 0;
+			return destroiBuffers(bufferDeString, bufferDeInt, 7);
 
 		// Cidade
 		if(salvaCampoVariavelAlt(fEntrada, fSaida, bufferDeString[3], &bufferDeInt[3], "cidade") == -1)
-			return 0;
+			return destroiBuffers(bufferDeString, bufferDeInt, 7);
 
 		// UF
 		if(salvaCampoVariavelAlt(fEntrada, fSaida, bufferDeString[4], &bufferDeInt[4], "UF") == -1)
-			return 0;
+			return destroiBuffers(bufferDeString, bufferDeInt, 7);
 
 		// Data-hora cadastro
 		if(!salvaCampoFixoAlt(fEntrada, fSaida, bufferDeString[5], &bufferDeInt[5], 19, "dataHoraCadastro"))
-			return 0;
+			return destroiBuffers(bufferDeString, bufferDeInt, 7);
 
 		// Data-hora atualiza
 		if(!salvaCampoFixoAlt(fEntrada, fSaida, bufferDeString[6], &bufferDeInt[6], 19, "dataHoraAtualiza"))
-			return 0;
+			return destroiBuffers(bufferDeString, bufferDeInt, 7);
 
 		// Ticket
 		if(!salvaCampoLong(fEntrada, fSaida, "ticket"))
-			return 0;
+			return destroiBuffers(bufferDeString, bufferDeInt, 7);
 
 		// Liberando a memoria das string utilizadas. o espaço usado 
 		for (i = 0; i < 7; i++) {

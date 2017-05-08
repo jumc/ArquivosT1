@@ -9,7 +9,6 @@
 #include <delimitador.h>
 
 /* A FAZER
-
 --> Funcao para descobrir com que tipo de registros foi construido o arquivo
 --> Mascara para documento
 --> Mascara para timestamp
@@ -112,7 +111,7 @@ int salvaString(char *string, int tamCampo, FILE *fSaida){
 // Salva uma string em um arquivo de saida. Retorna 1 caso obtenha sucesso, 0 caso contrario
     int escrito;
 
-    escrito = fwrite(string, 1, tamCampo, fSaida);
+    escrito = fwrite(string, sizeof(char), tamCampo, fSaida);
     if(escrito != tamCampo) // Caso nao conseguiu escrever todos os bytes do texto...
         return 0;
 
@@ -123,8 +122,8 @@ int salvaInt(int *n, FILE *fSaida){
 // Salva um int em um arquivo de saida. Retorna 1 caso obtenha sucesso, 0 caso contrario
     int escrito;
 
-    escrito = fwrite(n, 1, sizeof(int), fSaida);
-    if(escrito != sizeof(int)) // Caso nao conseguiu escrever todos os bytes do int...
+    escrito = fwrite(n, sizeof(int), 1, fSaida);
+    if(escrito != 1) // Caso nao conseguiu escrever todos os bytes do int...
         return 0;
 
     return 1;
@@ -134,8 +133,8 @@ int salvaLong(long int *n, FILE *fSaida){
 // Salva um long int em um arquivo de saida. Retorna 1 caso obtenha sucesso, 0 caso contrario
     int escrito;
 
-    escrito = fwrite(n, 1, sizeof(long int), fSaida);
-    if(escrito != sizeof(long int)) // Caso nao conseguiu escrever todos os bytes do long int...
+    escrito = fwrite(n, sizeof(long int), 1, fSaida);
+    if(escrito != 1) // Caso nao conseguiu escrever todos os bytes do long int...
         return 0;
 
     return 1;
@@ -292,10 +291,16 @@ void vizualizaCampoLong(FILE *fp, char *nomeCampo){
     }
 }
 
+int tipoRegistro(fSaida) {
+    int n;
+    fread(&n, sizeof(int), 1, fSaida);
+
+    return n;
+}
+
 void visualizar(FILE *fSaida){
 // Mostra todos os registros na tela, de acordo com o tipo de organizacao do arquivo de saida
     /*int tipo = tipoRegistro(fSaida);  
-
     switch(tipo):
         case 0:
             visualizarIndicador(fSaida);
@@ -319,7 +324,6 @@ int buscaDominio(FILE *fSaida){
    /* char *dominioBuscado = lerLinha(stdin, ' ');
     printf("\n");
     int tipo = tipoRegistro(fSaida);  
-
     switch(tipo):
         case 0:
              return visualizarIndicador(fSaida);
@@ -348,7 +352,6 @@ void registroRRN(FILE *fSaida){
     int rrn = lerCharToInt(stdin);
     printf("\n");
     /*int tipo = tipoRegistro(fSaida);  
-
     switch(tipo):
         case 0:
             registroRRNIndicador(fSaida);
