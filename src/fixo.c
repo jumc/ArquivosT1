@@ -19,16 +19,12 @@ int escreverFixo(FILE *fEntrada, FILE *fSaida){
 
 	//Este laco lê um registro e salva o tamanho do campo e seu conteudo
 	//fazendo esse algoritimo campo a campo
-	//while(ftell(fEntrada) != tamEntrada){
+	while(ftell(fEntrada) != tamEntrada){
 		// Dominio
 		if(salvaCampoVariavel(fEntrada, fSaida, "dominio") == -1)
 			return 0;
 
 		// Documento
-		tamCampo = 19;
-		if(!salvaInt(&tamCampo, fSaida))
-			return 0;
-
 		if(!salvaCampoFixo(fEntrada, fSaida, 19, "documento"))
 			return 0;	
 
@@ -45,16 +41,10 @@ int escreverFixo(FILE *fEntrada, FILE *fSaida){
 			return 0;
 
 		// Data Cadastro
-		tamCampo = 19;
-		if(!salvaInt(&tamCampo, fSaida))
-			return 0;
 		if(!salvaCampoFixo(fEntrada, fSaida, 19, "dataHoraCadastro"))
 			return 0;
 
 		// Data de Atualizacao
-		tamCampo = 19;
-		if(!salvaInt(&tamCampo, fSaida))
-			return 0;
 		if(!salvaCampoFixo(fEntrada, fSaida, 19, "dataHoraAtualiza"))
 			return 0;
 
@@ -67,7 +57,7 @@ int escreverFixo(FILE *fEntrada, FILE *fSaida){
 
 		// Pegando o ENTER para ir para a proxima linha
 		fgetc(fEntrada);
-	//}
+	}
 	return 1;
 	
 	
