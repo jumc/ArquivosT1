@@ -12,22 +12,23 @@ int escreverFixo(FILE *fEntrada, FILE *fSaida){
     // Escreve um arquivo de saida com os dados do arquivo de entrada organizado
     //em numero fixo de campos, e com indicadores de tamanho dos campos
 	long tamEntrada;
-	
+	//variavel que salva tamanho de campo fixo
+	int tamCampo;
 	// Descobrindo tamanho do arquivo de entrada
 	fseek(fEntrada, 0, SEEK_END);
 	tamEntrada = ftell(fEntrada);
 	rewind(fEntrada);
 
-	freopen("output.txt", "wb+", fSaida);
 	//Este laco lê um registro e salva o tamanho do campo e seu conteudo
 	//fazendo esse algoritimo campo a campo
 	while(ftell(fEntrada) != tamEntrada){
-		// Dominio	
+		// Dominio
 		if(salvaCampoVariavel(fEntrada, fSaida, "dominio") == -1)
 			return 0;
 
 		// Documento
-		if(!salvaInt(19, fSaida))
+		tamCampo = 19;
+		if(!salvaInt(&tamCampo, fSaida))
 			return 0;
 		if(!salvaCampoFixo(fEntrada, fSaida, 19, "documento"))
 			return 0;	
@@ -45,19 +46,20 @@ int escreverFixo(FILE *fEntrada, FILE *fSaida){
 			return 0;
 
 		// Data Cadastro
-		if(salvaInt(19, fSaida))
-			return 0;
+		tamCampo = 19;
+		if(!salvaInt(&tamCampo, fSaida))
 		if(!salvaCampoFixo(fEntrada, fSaida, 19, "dataHoraCadastro"))
 			return 0;
 
 		// Data de Atualizacao
-		if(salvaInt(19, fSaida))
-			return 0;
+		tamCampo = 19;
+		if(!salvaInt(&tamCampo, fSaida))
 		if(!salvaCampoFixo(fEntrada, fSaida, 19, "dataHoraAtualiza"))
 			return 0;
 
 		// Ticket
-		if(salvaInt(sizeof(long), fSaida))
+		tamCampo = sizeof(long);
+		if(salvaInt(&tamCampo, fSaida))
 			return 0;
 		
 		if(!salvaCampoLong(fEntrada, fSaida, "ticket"))

@@ -123,7 +123,7 @@ int salvaInt(int *n, FILE *fSaida){
 // Salva um int em um arquivo de saida. Retorna 1 caso obtenha sucesso, 0 caso contrario
     int escrito;
 
-    escrito = fwrite(n, sizeof(int), 1, fSaida);
+    escrito = fwrite(n, 1, sizeof(int), fSaida);
     if(escrito != sizeof(int)) // Caso nao conseguiu escrever todos os bytes do int...
         return 0;
 
