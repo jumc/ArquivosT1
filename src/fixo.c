@@ -47,20 +47,21 @@ int escreverFixo(FILE *fEntrada, FILE *fSaida){
 		// Data Cadastro
 		tamCampo = 19;
 		if(!salvaInt(&tamCampo, fSaida))
+			return 0;
 		if(!salvaCampoFixo(fEntrada, fSaida, 19, "dataHoraCadastro"))
 			return 0;
 
 		// Data de Atualizacao
 		tamCampo = 19;
 		if(!salvaInt(&tamCampo, fSaida))
+			return 0;
 		if(!salvaCampoFixo(fEntrada, fSaida, 19, "dataHoraAtualiza"))
 			return 0;
 
 		// Ticket
 		tamCampo = sizeof(long);
-		if(salvaInt(&tamCampo, fSaida))
+		if(!salvaInt(&tamCampo, fSaida))
 			return 0;
-		
 		if(!salvaCampoLong(fEntrada, fSaida, "ticket"))
 			return 0;
 
