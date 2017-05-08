@@ -11,7 +11,6 @@ int escreverFixo(FILE *fEntrada, FILE *fSaida){
     //em numero fixo de campos, e com indicadores de tamanho dos campos
 	long tamEntrada;
 	//variavel que salva tamanho de campo fixo
-	int tamCampo;
 	// Descobrindo tamanho do arquivo de entrada
 	fseek(fEntrada, 0, SEEK_END);
 	tamEntrada = ftell(fEntrada);
