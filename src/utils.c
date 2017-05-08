@@ -154,7 +154,6 @@ int salvaCampoVariavel(FILE *fEntrada, FILE *fSaida, char *nomeCampo){
         printf("::Erro ao salvar tamanho do %s::\n", nomeCampo);
         return -1;
     }
-    printf("%s\n", string);
     if(!salvaString(string, tamCampo, fSaida)){
         free(string);
         printf("::Erro ao salvar %s::\n", nomeCampo);
