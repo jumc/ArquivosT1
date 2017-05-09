@@ -1,0 +1,2073 @@
+|	PROGRAMA GERADOR DE ARQUIVOS
+|
+|	Bem vindo ao programa responsavel por gerar arquivos de acordo suas
+| preferencias de construcao e por procurar os dados armazenados.
+| Os arquivos gerados possuirao dados de dominios governamentais.
+| Voce pode escolher qualquer opcao abaixo digitando o codigo da ope-
+| racao desejada ou seu nome/palavra chave.
+
+Operacoes para Gerar arquivo
+	(1) Indicador de tamanho
+	(2) Delimitadores entre registros
+	(3) Número fixo de campos
+
+Operacoes para Recuperar arquivo
+	(4) Visualizar todos os registros
+	(5) Busca por domínio
+	(6) Registro completo por RRN
+	(7) Campo de um registro por RRN
+
+Operacoes Gerais do Sistema
+	(9) Exibir menu de operacoes
+	(0) Sair
+
+| Digite a operacao que deseja realizar: Escrita realizada com sucesso
+
+| Digite a operacao que deseja realizar: Escrita realizada com sucesso
+
+| Digite a operacao que deseja realizar: Escrita realizada com sucesso
+
+| Digite a operacao que deseja realizar: Escrita realizada com sucesso
+
+| Digite a operacao que deseja realizar: Escrita realizada com sucesso
+
+| Digite a operacao que deseja realizar: Escrita realizada com sucesso
+
+| Digite a operacao que deseja realizar: Escrita realizada com sucesso
+
+| Digite a operacao que deseja realizar: Escrita realizada com sucesso
+
+| Digite a operacao que deseja realizar: Escrita realizada com sucesso
+
+| Digite a operacao que deseja realizar: 
+Registro 0
+Dominio: eletrobras.gov.br
+Documento: 000.001.180/0002-07
+Nome: CENTRAIS ELETRICAS BRASILEIRAS SA
+UF: Rio de Janeiro
+Cidade: Rio de Janeiro
+dataHoraCadastro: 09/01/1996 12:00:00
+dataHoraAtualiza: 02/07/2014 19:56:36
+Ticket: 5023
+
+Registro 1
+Dominio: premioconservacaoenergia.gov.br
+Documento: 000.001.180/0002-07
+Nome: CENTRAIS ELETRICAS BRASILEIRAS SA
+UF: Rio de Janeiro
+Cidade: Rio de Janeiro
+dataHoraCadastro: 24/03/2009 20:07:14
+dataHoraAtualiza: 15/04/2013 21:36:17
+Ticket: 5379045
+
+Registro 2
+Dominio: procel.gov.br
+Documento: 000.001.180/0002-07
+Nome: CENTRAIS ELETRICAS BRASILEIRAS SA
+UF: Rio de Janeiro
+Cidade: Rio de Janeiro
+dataHoraCadastro: 06/11/2000 18:41:03
+dataHoraAtualiza: 05/10/2009 18:54:36
+Ticket: 453438
+
+Registro 3
+Dominio: proinfa.gov.br
+Documento: 000.001.180/0002-07
+Nome: CENTRAIS ELETRICAS BRASILEIRAS SA
+UF: Rio de Janeiro
+Cidade: Rio de Janeiro
+dataHoraCadastro: 18/04/2002 14:55:25
+dataHoraAtualiza: 15/04/2013 21:36:41
+Ticket: 784297
+
+Registro 4
+Dominio: reluz.gov.br
+Documento: 000.001.180/0002-07
+Nome: CENTRAIS ELETRICAS BRASILEIRAS SA
+UF: Rio de Janeiro
+Cidade: Rio de Janeiro
+dataHoraCadastro: 06/11/2000 18:41:04
+dataHoraAtualiza: 05/10/2009 18:35:49
+Ticket: 453442
+
+Registro 5
+Dominio: bacen.gov.br
+Documento: 000.038.166/0001-05
+Nome: Banco Central do Brasil
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 26/11/1996 11:00:00
+dataHoraAtualiza: 17/06/2015 22:19:54
+Ticket: 0
+
+Registro 6
+Dominio: bancocentral.gov.br
+Documento: 000.038.166/0001-05
+Nome: Banco Central do Brasil
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 31/12/1998 00:24:21
+dataHoraAtualiza: 17/06/2015 22:20:15
+Ticket: 135008
+
+Registro 7
+Dominio: bc.gov.br
+Documento: 000.038.166/0001-05
+Nome: Banco Central do Brasil
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 30/12/1998 18:22:39
+dataHoraAtualiza: 17/06/2015 22:20:33
+Ticket: 133801
+
+Registro 8
+Dominio: bcb.gov.br
+Documento: 000.038.166/0001-05
+Nome: Banco Central do Brasil
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 24/01/1996 12:00:00
+dataHoraAtualiza: 17/06/2015 22:20:50
+Ticket: 5153
+
+Registro 9
+Dominio: cidadaniafinanceira.gov.br
+Documento: 000.038.166/0001-05
+Nome: Banco Central do Brasil
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 31/03/2015 16:27:25
+dataHoraAtualiza: 17/06/2015 22:21:48
+Ticket: 13971449
+
+:: Aperte ENTER para continuar o browsing ::
+Registro 10
+Dominio: sisbacen.gov.br
+Documento: 000.038.166/0001-05
+Nome: Banco Central do Brasil
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 31/12/1998 00:24:19
+dataHoraAtualiza: 18/05/2016 21:19:24
+Ticket: 135007
+
+Registro 11
+Dominio: selic.gov.br
+Documento: 000.038.166/0010-98
+Nome: Banco Central do Brasil
+UF: Rio de Janeiro
+Cidade: Rio de Janeiro
+dataHoraCadastro: 28/07/2010 12:18:08
+dataHoraAtualiza: 30/03/2011 02:25:07
+Ticket: 7082360
+
+Registro 12
+Dominio: dnocs.gov.br
+Documento: 000.043.711/0001-43
+Nome: DEPARTAMENTO NACIONAL DE OBRAS CONTRA AS SECAS
+UF: Cear�
+Cidade: Fortaleza
+dataHoraCadastro: 10/02/1999 19:09:57
+dataHoraAtualiza: 04/09/2015 14:09:16
+Ticket: 139185
+
+Registro 13
+Dominio: dnocspb.gov.br
+Documento: 000.043.711/0008-10
+Nome: Segundo Distrito de Engenharia Rural
+UF: Para�ba
+Cidade: Jo�o Pessoa
+dataHoraCadastro: 14/06/1999 16:47:03
+dataHoraAtualiza: 11/03/2016 13:47:39
+Ticket: 165937
+
+Registro 14
+Dominio: fhdf.gov.br
+Documento: 000.054.015/0001-32
+Nome: Secretaria de Sa�de do Distrito Federal
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 01/01/1996 12:00:00
+dataHoraAtualiza: 19/02/2008 20:18:44
+Ticket: 1
+
+Registro 15
+Dominio: funai.gov.br
+Documento: 000.059.311/0001-26
+Nome: Funda��o Nacional do Indio
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 10/02/1998 13:07:35
+dataHoraAtualiza: 
+Ticket: 83785
+
+Registro 16
+Dominio: museudoindio.gov.br
+Documento: 000.059.311/0002-07
+Nome: Museu do �ndio - Funda��o Nacional do �ndio
+UF: Rio de Janeiro
+Cidade: Rio de Janeiro
+dataHoraCadastro: 23/10/2003 16:28:14
+dataHoraAtualiza: 11/05/2016 12:47:47
+Ticket: 1373769
+
+Registro 17
+Dominio: eletrosul.gov.br
+Documento: 000.073.957/0001-68
+Nome: Eletrosul Centrais El�tricas S.A.
+UF: Santa Catarina
+Cidade: Florian�polis
+dataHoraCadastro: 27/07/1996 12:00:00
+dataHoraAtualiza: 29/12/2014 18:59:18
+Ticket: 12785
+
+Registro 18
+Dominio: bcdam.gov.br
+Documento: 000.091.652/0002-60
+Nome: COMPANHIA DE PESQUISA DE RECURSOS MINERAIS
+UF: Rio de Janeiro
+Cidade: Rio de Janeiro
+dataHoraCadastro: 
+dataHoraAtualiza: 05/08/2015 18:20:34
+Ticket: 145756
+
+Registro 19
+Dominio: cprm.gov.br
+Documento: 000.091.652/0002-60
+Nome: COMPANHIA DE PESQUISA DE RECURSOS MINERAIS
+UF: Rio de Janeiro
+Cidade: Rio de Janeiro
+dataHoraCadastro: 16/02/1996 12:00:00
+dataHoraAtualiza: 25/11/2015 15:20:16
+Ticket: 5443
+
+:: Aperte ENTER para continuar o browsing ::
+Registro 20
+Dominio: redegeochronos.gov.br
+Documento: 000.091.652/0002-60
+Nome: COMPANHIA DE PESQUISA DE RECURSOS MINERAIS
+UF: Rio de Janeiro
+Cidade: Rio de Janeiro
+dataHoraCadastro: 19/05/2006 11:22:45
+dataHoraAtualiza: 24/04/2014 17:36:06
+Ticket: 2788606
+
+Registro 21
+Dominio: cprm-ma.gov.br
+Documento: 000.091.652/0004-21
+Nome: Companhia de Pesquisa de Recursos Minerais CPRM
+UF: Amazonas
+Cidade: Manaus
+dataHoraCadastro: 23/01/2001 12:07:05
+dataHoraAtualiza: 30/12/2002 14:57:15
+Ticket: 500371
+
+Registro 22
+Dominio: cprm-be.gov.br
+Documento: 000.091.652/0005-02
+Nome: COMPANHIA DE PESQUISA DE RECURSOS MINERAIS
+UF: Paran�
+Cidade: Bel�m
+dataHoraCadastro: 18/01/1997 11:00:00
+dataHoraAtualiza: 
+Ticket: 28066
+
+Registro 23
+Dominio: cprmba.gov.br
+Documento: 000.091.652/0007-74
+Nome: Companhia de Pesquisa de Recursos Minerais
+UF: Bahia
+Cidade: Salvador
+dataHoraCadastro: 09/03/2001 12:12:55
+dataHoraAtualiza: 22/06/2002 14:25:00
+Ticket: 523307
+
+Registro 24
+Dominio: cprm-sp.gov.br
+Documento: 000.091.652/0008-55
+Nome: Companhia de Pesquisa de Recursos Minerais
+UF: S�o Paulo
+Cidade: S�o Paulo
+dataHoraCadastro: 04/05/1998 17:43:41
+dataHoraAtualiza: 05/05/1998 12:00:00
+Ticket: 95976
+
+Registro 25
+Dominio: cprmpa.gov.br
+Documento: 000.091.652/0009-36
+Nome: Companhia de Pesquisas de Recursos Minerais CPRM
+UF: Rio Grande do Sul
+Cidade: Porto Alegre
+dataHoraCadastro: 18/07/1998 13:55:22
+dataHoraAtualiza: 17/11/1999 18:49:59
+Ticket: 104099
+
+Registro 26
+Dominio: cprmbh.gov.br
+Documento: 000.091.652/0010-70
+Nome: Companhia de Pesquisa de Recursos Minerais - CPRM
+UF: Minas Gerais
+Cidade: Belo Horizonte
+dataHoraCadastro: 17/11/2000 14:03:42
+dataHoraAtualiza: 
+Ticket: 460087
+
+Registro 27
+Dominio: saofrancisco.gov.br
+Documento: 000.091.652/0010-70
+Nome: Companhia de Pesquisa de Recursos Minerais - CPRM
+UF: Minas Gerais
+Cidade: Belo Horizonte
+dataHoraCadastro: 13/10/1999 16:52:31
+dataHoraAtualiza: 13/04/2016 16:16:32
+Ticket: 204971
+
+Registro 28
+Dominio: reste.gov.br
+Documento: 000.091.652/0015-84
+Nome: Companhia de Pesquisa de Recursos Minerais
+UF: Piau�
+Cidade: Teresina
+dataHoraCadastro: 10/02/1998 12:07:21
+dataHoraAtualiza: 
+Ticket: 85216
+
+Registro 29
+Dominio: crecidf.gov.br
+Documento: 000.105.650/0001-00
+Nome: CONSELHO REGIONAL DE CORRETORES DE IMOVEIS CRECI
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 12/01/2012 13:23:50
+dataHoraAtualiza: 14/10/2015 17:07:34
+Ticket: 9323584
+
+:: Aperte ENTER para continuar o browsing ::
+Registro 30
+Dominio: cfmv.gov.br
+Documento: 000.119.784/0001-71
+Nome: CONSELHO FEDERAL DE MEDICINA VETERINARIA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 29/12/2010 12:54:29
+dataHoraAtualiza: 06/01/2017 01:06:21
+Ticket: 7629594
+
+Registro 31
+Dominio: eafrs.gov.br
+Documento: 000.147.606/0001-54
+Nome: Escola Agrot�cnica Federal de Rio do Sul
+UF: Santa Catarina
+Cidade: Rio do Sul
+dataHoraCadastro: 
+dataHoraAtualiza: 
+Ticket: 866902
+
+Registro 32
+Dominio: inb.gov.br
+Documento: 000.322.818/0020-93
+Nome: Industrias Nucleares do Brasil S/A
+UF: Rio de Janeiro
+Cidade: Resende
+dataHoraCadastro: 17/03/1998 19:26:24
+dataHoraAtualiza: 27/01/2017 14:24:11
+Ticket: 89158
+
+Registro 33
+Dominio: agritempo.gov.br
+Documento: 000.348.003/0001-10
+Nome: EMPRESA BRASILEIRA DE PESQUISA AGROPECUARIA
+UF: S�o Paulo
+Cidade: Campinas
+dataHoraCadastro: 05/06/2003 18:42:46
+dataHoraAtualiza: 29/07/2015 18:33:32
+Ticket: 1236028
+
+Registro 34
+Dominio: agrolivre.gov.br
+Documento: 000.348.003/0001-10
+Nome: EMPRESA BRASILEIRA DE PESQUISA AGROPECUARIA
+UF: S�o Paulo
+Cidade: Campinas
+dataHoraCadastro: 03/02/2004 18:31:07
+dataHoraAtualiza: 
+Ticket: 1480690
+
+Registro 35
+Dominio: pimentalonga.gov.br
+Documento: 000.348.003/0068-28
+Nome: Embrapa - Acre
+UF: Acre
+Cidade: Rio Branco
+dataHoraCadastro: 25/10/2000 12:50:34
+dataHoraAtualiza: 27/11/2000 14:39:49
+Ticket: 449661
+
+Registro 36
+Dominio: embrapa.gov.br
+Documento: 000.348.003/0101-83
+Nome: Empresa Brasileira de Pesquisa Agropecuaria
+UF: Roraima
+Cidade: Boa Vista
+dataHoraCadastro: 09/06/2000 20:26:57
+dataHoraAtualiza: 03/11/2016 17:39:03
+Ticket: 357901
+
+Registro 37
+Dominio: aeroportodebrasilia.gov.br
+Documento: 000.352.294/0001-10
+Nome: INFRAERO - EMPRESA BRASILEIRA DE INFRA-ESTRUTURA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 12/11/2002 10:56:02
+dataHoraAtualiza: 
+Ticket: 1008124
+
+Registro 38
+Dominio: aeroportodesalvador.gov.br
+Documento: 000.352.294/0001-10
+Nome: INFRAERO - EMPRESA BRASILEIRA DE INFRA-ESTRUTURA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 12/11/2002 10:56:02
+dataHoraAtualiza: 09/01/2013 11:34:38
+Ticket: 1012775
+
+Registro 39
+Dominio: aeroportoindustria.gov.br
+Documento: 000.352.294/0001-10
+Nome: INFRAERO - EMPRESA BRASILEIRA DE INFRA-ESTRUTURA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 29/01/2002 18:45:42
+dataHoraAtualiza: 09/01/2013 11:34:34
+Ticket: 719691
+
+:: Aperte ENTER para continuar o browsing ::
+Registro 40
+Dominio: aeroportoindustrial.gov.br
+Documento: 000.352.294/0001-10
+Nome: INFRAERO - EMPRESA BRASILEIRA DE INFRA-ESTRUTURA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 29/01/2002 18:45:44
+dataHoraAtualiza: 09/01/2013 11:34:28
+Ticket: 719697
+
+Registro 41
+Dominio: aeroshopping.gov.br
+Documento: 000.352.294/0001-10
+Nome: INFRAERO - EMPRESA BRASILEIRA DE INFRA-ESTRUTURA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 29/01/2002 18:45:38
+dataHoraAtualiza: 09/01/2013 11:34:13
+Ticket: 719666
+
+Registro 42
+Dominio: infraero.gov.br
+Documento: 000.352.294/0001-10
+Nome: INFRAERO - EMPRESA BRASILEIRA DE INFRA-ESTRUTURA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 05/11/1996 11:00:00
+dataHoraAtualiza: 
+Ticket: 21425
+
+Registro 43
+Dominio: sivnet.gov.br
+Documento: 000.352.294/0001-10
+Nome: INFRAERO - EMPRESA BRASILEIRA DE INFRA-ESTRUTURA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 29/01/2002 18:45:39
+dataHoraAtualiza: 09/01/2013 11:34:23
+Ticket: 719669
+
+Registro 44
+Dominio: tecanet.gov.br
+Documento: 000.352.294/0001-10
+Nome: INFRAERO - EMPRESA BRASILEIRA DE INFRA-ESTRUTURA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 29/01/2002 18:45:41
+dataHoraAtualiza: 09/01/2013 11:34:18
+Ticket: 719687
+
+Registro 45
+Dominio: novoaeroportorecife.gov.br
+Documento: 000.352.294/0014-35
+Nome: INFRAERO - EMPRESA BRASILEIRA DE INFRA-ESTRUTURA
+UF: PE
+Cidade: Recife
+dataHoraCadastro: 10/07/2001 11:41:34
+dataHoraAtualiza: 15/02/2013 12:12:41
+Ticket: 596093
+
+Registro 46
+Dominio: amazonasenergia.gov.br
+Documento: 000.357.038/0001-16
+Nome: Centrais Eletricas do Norte do Brasil
+UF: Distrito Federal
+Cidade: Brasilia
+dataHoraCadastro: 28/09/2001 20:14:55
+dataHoraAtualiza: 16/10/2015 20:59:14
+Ticket: 639230
+
+Registro 47
+Dominio: belomonte.gov.br
+Documento: 000.357.038/0001-16
+Nome: Centrais Eletricas do Norte do Brasil
+UF: Distrito Federal
+Cidade: Brasilia
+dataHoraCadastro: 08/05/2002 14:33:37
+dataHoraAtualiza: 
+Ticket: 810126
+
+Registro 48
+Dominio: boavistaenergia.gov.br
+Documento: 000.357.038/0001-16
+Nome: Centrais Eletricas do Norte do Brasil
+UF: Distrito Federal
+Cidade: Brasilia
+dataHoraCadastro: 12/09/2000 12:00:19
+dataHoraAtualiza: 15/06/2016 01:15:39
+Ticket: 414884
+
+Registro 49
+Dominio: bvenergia.gov.br
+Documento: 000.357.038/0001-16
+Nome: Centrais Eletricas do Norte do Brasil
+UF: Distrito Federal
+Cidade: Brasilia
+dataHoraCadastro: 12/09/2000 12:00:20
+dataHoraAtualiza: 09/01/2010 16:52:25
+Ticket: 414885
+
+:: Aperte ENTER para continuar o browsing ::
+Registro 50
+Dominio: cbee.gov.br
+Documento: 000.357.038/0001-16
+Nome: Centrais Eletricas do Norte do Brasil
+UF: Distrito Federal
+Cidade: Brasilia
+dataHoraCadastro: 24/01/2002 14:02:30
+dataHoraAtualiza: 
+Ticket: 714185
+
+Registro 51
+Dominio: coegv.gov.br
+Documento: 000.357.038/0001-16
+Nome: Centrais Eletricas do Norte do Brasil
+UF: Distrito Federal
+Cidade: Brasilia
+dataHoraCadastro: 12/11/1998 19:22:22
+dataHoraAtualiza: 08/05/2008 14:13:21
+Ticket: 122146
+
+Registro 52
+Dominio: eletronorte.gov.br
+Documento: 000.357.038/0001-16
+Nome: Centrais Eletricas do Norte do Brasil
+UF: Distrito Federal
+Cidade: Brasilia
+dataHoraCadastro: 09/08/2000 22:35:19
+dataHoraAtualiza: 
+Ticket: 396358
+
+Registro 53
+Dominio: eln.gov.br
+Documento: 000.357.038/0001-16
+Nome: Centrais Eletricas do Norte do Brasil
+UF: Distrito Federal
+Cidade: Brasilia
+dataHoraCadastro: 30/05/1995 12:00:00
+dataHoraAtualiza: 02/01/2013 16:53:26
+Ticket: 2
+
+Registro 54
+Dominio: energiaboavista.gov.br
+Documento: 000.357.038/0001-16
+Nome: Centrais Eletricas do Norte do Brasil
+UF: Distrito Federal
+Cidade: Brasilia
+dataHoraCadastro: 12/09/2000 12:00:20
+dataHoraAtualiza: 10/12/2008 12:11:46
+Ticket: 414887
+
+Registro 55
+Dominio: energiabv.gov.br
+Documento: 000.357.038/0001-16
+Nome: Centrais Eletricas do Norte do Brasil
+UF: Distrito Federal
+Cidade: Brasilia
+dataHoraCadastro: 12/09/2000 12:00:21
+dataHoraAtualiza: 10/12/2008 12:11:56
+Ticket: 414889
+
+Registro 56
+Dominio: redefloresta.gov.br
+Documento: 000.357.038/0001-16
+Nome: Centrais Eletricas do Norte do Brasil
+UF: Distrito Federal
+Cidade: Brasilia
+dataHoraCadastro: 05/03/2004 12:48:15
+dataHoraAtualiza: 12/05/2010 11:22:33
+Ticket: 1546935
+
+Registro 57
+Dominio: topawa-kaa.gov.br
+Documento: 000.357.038/0001-16
+Nome: Centrais Eletricas do Norte do Brasil
+UF: Distrito Federal
+Cidade: Brasilia
+dataHoraCadastro: 05/03/2004 12:48:15
+dataHoraAtualiza: 12/05/2010 11:22:53
+Ticket: 1546938
+
+Registro 58
+Dominio: cadastrominhacasaminhavida.gov.br
+Documento: 000.360.305/0001-04
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 25/03/2016 20:12:18
+dataHoraAtualiza: 
+Ticket: 15397059
+
+Registro 59
+Dominio: caixa.gov.br
+Documento: 000.360.305/0001-04
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 20/08/1997 12:00:00
+dataHoraAtualiza: 29/11/2016 02:08:42
+Ticket: 53140
+
+:: Aperte ENTER para continuar o browsing ::
+Registro 60
+Dominio: caixacultural.gov.br
+Documento: 000.360.305/0001-04
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 17/05/2005 11:42:54
+dataHoraAtualiza: 16/07/2015 18:55:07
+Ticket: 2119071
+
+Registro 61
+Dominio: caixaeconomica.gov.br
+Documento: 000.360.305/0001-04
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 20/08/1997 12:00:00
+dataHoraAtualiza: 16/07/2015 19:03:08
+Ticket: 53141
+
+Registro 62
+Dominio: caixaeconomicafederal.gov.br
+Documento: 000.360.305/0001-04
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 20/10/1998 13:51:47
+dataHoraAtualiza: 16/07/2015 19:08:55
+Ticket: 120970
+
+Registro 63
+Dominio: caixamaisqueumbanco.gov.br
+Documento: 000.360.305/0001-04
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 12/09/2011 18:52:35
+dataHoraAtualiza: 16/07/2015 19:35:35
+Ticket: 8785977
+
+Registro 64
+Dominio: caixamasterpass.gov.br
+Documento: 000.360.305/0001-04
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 27/10/2015 19:33:35
+dataHoraAtualiza: 27/10/2015 19:33:35
+Ticket: 14823420
+
+Registro 65
+Dominio: caixaoperadoradeseguros.gov.br
+Documento: 000.360.305/0001-04
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 16/07/2015 17:39:31
+dataHoraAtualiza: 16/07/2015 19:38:13
+Ticket: 14436705
+
+Registro 66
+Dominio: caixapostal.gov.br
+Documento: 000.360.305/0001-04
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 23/11/1999 16:04:45
+dataHoraAtualiza: 16/07/2015 19:40:19
+Ticket: 223289
+
+Registro 67
+Dominio: caixaseguridade.gov.br
+Documento: 000.360.305/0001-04
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 16/07/2015 17:39:31
+dataHoraAtualiza: 16/07/2015 19:42:44
+Ticket: 14436714
+
+Registro 68
+Dominio: cef.gov.br
+Documento: 000.360.305/0001-04
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 01/01/1996 12:00:00
+dataHoraAtualiza: 16/07/2015 20:39:01
+Ticket: 3
+
+Registro 69
+Dominio: creditoruralcaixa.gov.br
+Documento: 000.360.305/0001-04
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 17/09/2014 15:09:31
+dataHoraAtualiza: 
+Ticket: 13323025
+
+:: Aperte ENTER para continuar o browsing ::
+Registro 70
+Dominio: fgts.gov.br
+Documento: 000.360.305/0001-04
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 29/04/2009 16:21:42
+dataHoraAtualiza: 16/07/2015 21:00:13
+Ticket: 5512241
+
+Registro 71
+Dominio: postal.gov.br
+Documento: 000.360.305/0001-04
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 23/11/1999 16:04:46
+dataHoraAtualiza: 16/07/2015 21:27:26
+Ticket: 223294
+
+Registro 72
+Dominio: seliganacaixa.gov.br
+Documento: 000.360.305/0001-04
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 17/09/2014 15:09:31
+dataHoraAtualiza: 16/07/2015 21:34:41
+Ticket: 13323021
+
+Registro 73
+Dominio: investidoresinstitucionais.gov.br
+Documento: 000.360.305/0262-51
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 13/12/2001 13:28:42
+dataHoraAtualiza: 16/07/2015 21:17:50
+Ticket: 689142
+
+Registro 74
+Dominio: caminhaodasorte.gov.br
+Documento: 000.360.305/0643-40
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 02/05/2000 13:26:04
+dataHoraAtualiza: 16/07/2015 19:43:47
+Ticket: 323560
+
+Registro 75
+Dominio: caminhaofederal.gov.br
+Documento: 000.360.305/0643-40
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 
+dataHoraAtualiza: 
+Ticket: 323559
+
+Registro 76
+Dominio: cartelafederal.gov.br
+Documento: 000.360.305/0643-40
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 02/05/2000 13:26:05
+dataHoraAtualiza: 
+Ticket: 323555
+
+Registro 77
+Dominio: loteriaesportiva.gov.br
+Documento: 000.360.305/0643-40
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 02/05/2000 13:26:12
+dataHoraAtualiza: 16/07/2015 21:20:13
+Ticket: 323558
+
+Registro 78
+Dominio: loteriafederal.gov.br
+Documento: 000.360.305/0643-40
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 02/05/2000 13:26:13
+dataHoraAtualiza: 16/07/2015 21:20:48
+Ticket: 323556
+
+Registro 79
+Dominio: quina.gov.br
+Documento: 000.360.305/0643-40
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 02/05/2000 13:26:17
+dataHoraAtualiza: 
+Ticket: 323557
+
+:: Aperte ENTER para continuar o browsing ::
+Registro 80
+Dominio: sena.gov.br
+Documento: 000.360.305/0643-40
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 02/05/2000 13:26:19
+dataHoraAtualiza: 16/07/2015 21:35:04
+Ticket: 323554
+
+Registro 81
+Dominio: supercaminhaodasorte.gov.br
+Documento: 000.360.305/0643-40
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 02/05/2000 13:26:20
+dataHoraAtualiza: 16/07/2015 21:35:42
+Ticket: 323561
+
+Registro 82
+Dominio: trevodaloteria.gov.br
+Documento: 000.360.305/0643-40
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 02/05/2000 13:26:23
+dataHoraAtualiza: 16/07/2015 21:39:08
+Ticket: 323553
+
+Registro 83
+Dominio: trincadasorte.gov.br
+Documento: 000.360.305/0643-40
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 02/05/2000 13:26:25
+dataHoraAtualiza: 16/07/2015 21:41:15
+Ticket: 323562
+
+Registro 84
+Dominio: bolsadacaixa.gov.br
+Documento: 000.360.305/0655-83
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 04/08/2000 21:17:42
+dataHoraAtualiza: 16/07/2015 18:31:57
+Ticket: 399411
+
+Registro 85
+Dominio: caixaqui.gov.br
+Documento: 000.360.305/0655-83
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 04/08/2000 21:17:44
+dataHoraAtualiza: 
+Ticket: 399412
+
+Registro 86
+Dominio: caixavirtual.gov.br
+Documento: 000.360.305/0655-83
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 04/08/2000 21:17:44
+dataHoraAtualiza: 16/07/2015 19:43:13
+Ticket: 399413
+
+Registro 87
+Dominio: esportiva.gov.br
+Documento: 000.360.305/0655-83
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 04/08/2000 21:17:49
+dataHoraAtualiza: 16/07/2015 20:56:09
+Ticket: 399414
+
+Registro 88
+Dominio: federal.gov.br
+Documento: 000.360.305/0655-83
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 04/08/2000 21:17:49
+dataHoraAtualiza: 
+Ticket: 399415
+
+Registro 89
+Dominio: govbankingcaixa.gov.br
+Documento: 000.360.305/0655-83
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 04/08/2000 21:17:52
+dataHoraAtualiza: 16/07/2015 21:02:57
+Ticket: 399416
+
+:: Aperte ENTER para continuar o browsing ::
+Registro 90
+Dominio: instantanea.gov.br
+Documento: 000.360.305/0655-83
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 04/08/2000 21:17:54
+dataHoraAtualiza: 16/07/2015 21:07:40
+Ticket: 399419
+
+Registro 91
+Dominio: mega-sena.gov.br
+Documento: 000.360.305/0655-83
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 04/08/2000 21:17:57
+dataHoraAtualiza: 16/07/2015 21:23:18
+Ticket: 399420
+
+Registro 92
+Dominio: megasena.gov.br
+Documento: 000.360.305/0655-83
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 22/09/2003 12:32:38
+dataHoraAtualiza: 16/07/2015 21:23:55
+Ticket: 1337598
+
+Registro 93
+Dominio: rapidinha.gov.br
+Documento: 000.360.305/0655-83
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 04/08/2000 21:18:00
+dataHoraAtualiza: 16/07/2015 21:31:10
+Ticket: 399421
+
+Registro 94
+Dominio: supersenaduplachance.gov.br
+Documento: 000.360.305/0655-83
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 04/08/2000 21:18:01
+dataHoraAtualiza: 16/07/2015 21:36:07
+Ticket: 399422
+
+Registro 95
+Dominio: apostasurpresa.gov.br
+Documento: 000.360.305/0674-46
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 04/08/2000 20:46:54
+dataHoraAtualiza: 16/07/2015 18:28:44
+Ticket: 399383
+
+Registro 96
+Dominio: caixaresolve.gov.br
+Documento: 000.360.305/0674-46
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 04/08/2000 20:46:55
+dataHoraAtualiza: 16/07/2015 19:41:37
+Ticket: 399386
+
+Registro 97
+Dominio: chequeazul.gov.br
+Documento: 000.360.305/0674-46
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 04/08/2000 20:46:57
+dataHoraAtualiza: 16/07/2015 20:40:04
+Ticket: 399389
+
+Registro 98
+Dominio: construcard.gov.br
+Documento: 000.360.305/0674-46
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 04/08/2000 20:46:58
+dataHoraAtualiza: 16/07/2015 20:44:20
+Ticket: 399390
+
+Registro 99
+Dominio: federalcap.gov.br
+Documento: 000.360.305/0674-46
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 04/08/2000 21:17:50
+dataHoraAtualiza: 
+Ticket: 399404
+
+:: Aperte ENTER para continuar o browsing ::
+Registro 100
+Dominio: federalcard.gov.br
+Documento: 000.360.305/0674-46
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 04/08/2000 21:17:50
+dataHoraAtualiza: 
+Ticket: 399405
+
+Registro 101
+Dominio: guiafacilgps.gov.br
+Documento: 000.360.305/0674-46
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 04/08/2000 21:17:53
+dataHoraAtualiza: 16/07/2015 21:06:06
+Ticket: 399406
+
+Registro 102
+Dominio: loterias.gov.br
+Documento: 000.360.305/0674-46
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 04/08/2000 21:17:55
+dataHoraAtualiza: 16/07/2015 21:21:07
+Ticket: 399407
+
+Registro 103
+Dominio: officebankingsocial.gov.br
+Documento: 000.360.305/0674-46
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 04/08/2000 21:17:59
+dataHoraAtualiza: 16/07/2015 21:26:37
+Ticket: 399409
+
+Registro 104
+Dominio: teimozinha.gov.br
+Documento: 000.360.305/0674-46
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 04/08/2000 21:18:02
+dataHoraAtualiza: 16/07/2015 21:36:41
+Ticket: 399410
+
+Registro 105
+Dominio: bolaofederal.gov.br
+Documento: 000.360.305/0688-41
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 02/05/2000 13:26:04
+dataHoraAtualiza: 16/07/2015 18:31:09
+Ticket: 323563
+
+Registro 106
+Dominio: lojacaixa.gov.br
+Documento: 000.360.305/0688-41
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 19/10/2004 18:53:37
+dataHoraAtualiza: 16/07/2015 21:19:12
+Ticket: 1850408
+
+Registro 107
+Dominio: loteca.gov.br
+Documento: 000.360.305/0688-41
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 02/05/2000 13:26:11
+dataHoraAtualiza: 16/07/2015 21:19:57
+Ticket: 323569
+
+Registro 108
+Dominio: loto-tauloteriadacopa.gov.br
+Documento: 000.360.305/0688-41
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 02/05/2000 13:26:14
+dataHoraAtualiza: 
+Ticket: 323575
+
+Registro 109
+Dominio: raspadinhadacaixa.gov.br
+Documento: 000.360.305/0688-41
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 02/05/2000 13:26:18
+dataHoraAtualiza: 16/07/2015 21:32:03
+Ticket: 323570
+
+:: Aperte ENTER para continuar o browsing ::
+Registro 110
+Dominio: raspadinhafederal.gov.br
+Documento: 000.360.305/0688-41
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 02/05/2000 13:26:18
+dataHoraAtualiza: 16/07/2015 21:32:23
+Ticket: 323571
+
+Registro 111
+Dominio: shoppingcaixa.gov.br
+Documento: 000.360.305/0688-41
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 19/10/2004 18:53:37
+dataHoraAtualiza: 16/07/2015 21:35:22
+Ticket: 1850414
+
+Registro 112
+Dominio: supertrinca.gov.br
+Documento: 000.360.305/0688-41
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 
+dataHoraAtualiza: 
+Ticket: 323567
+
+Registro 113
+Dominio: trevodasorte.gov.br
+Documento: 000.360.305/0688-41
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 02/05/2000 13:26:23
+dataHoraAtualiza: 16/07/2015 21:39:23
+Ticket: 323577
+
+Registro 114
+Dominio: trevofederal.gov.br
+Documento: 000.360.305/0688-41
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 02/05/2000 13:26:24
+dataHoraAtualiza: 16/07/2015 21:40:29
+Ticket: 323580
+
+Registro 115
+Dominio: trinca.gov.br
+Documento: 000.360.305/0688-41
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 02/05/2000 13:26:25
+dataHoraAtualiza: 16/07/2015 21:40:49
+Ticket: 323568
+
+Registro 116
+Dominio: trinka.gov.br
+Documento: 000.360.305/0688-41
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 02/05/2000 13:26:26
+dataHoraAtualiza: 16/07/2015 21:41:46
+Ticket: 323565
+
+Registro 117
+Dominio: caixadasorte.gov.br
+Documento: 000.360.305/2399-13
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 04/08/2000 21:17:42
+dataHoraAtualiza: 16/07/2015 18:56:03
+Ticket: 399423
+
+Registro 118
+Dominio: caixadotesouro.gov.br
+Documento: 000.360.305/2399-13
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 04/08/2000 21:17:43
+dataHoraAtualiza: 16/07/2015 18:59:03
+Ticket: 399424
+
+Registro 119
+Dominio: caixaforte.gov.br
+Documento: 000.360.305/2399-13
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 04/08/2000 21:17:43
+dataHoraAtualiza: 16/07/2015 19:31:54
+Ticket: 399425
+
+:: Aperte ENTER para continuar o browsing ::
+Registro 120
+Dominio: carrocampeao.gov.br
+Documento: 000.360.305/2399-13
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 04/08/2000 21:17:45
+dataHoraAtualiza: 16/07/2015 19:44:21
+Ticket: 399426
+
+Registro 121
+Dominio: dinheiroaqui.gov.br
+Documento: 000.360.305/2399-13
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 
+dataHoraAtualiza: 
+Ticket: 399427
+
+Registro 122
+Dominio: dinheiroemcaixa.gov.br
+Documento: 000.360.305/2399-13
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 04/08/2000 21:17:46
+dataHoraAtualiza: 16/07/2015 20:49:29
+Ticket: 399428
+
+Registro 123
+Dominio: dinheiroinstantaneo.gov.br
+Documento: 000.360.305/2399-13
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 04/08/2000 21:17:47
+dataHoraAtualiza: 16/07/2015 20:49:55
+Ticket: 399429
+
+Registro 124
+Dominio: dinheirovivo.gov.br
+Documento: 000.360.305/2399-13
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 04/08/2000 21:17:48
+dataHoraAtualiza: 16/07/2015 20:50:12
+Ticket: 399431
+
+Registro 125
+Dominio: duplasena.gov.br
+Documento: 000.360.305/2399-13
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 30/09/2003 19:48:18
+dataHoraAtualiza: 16/07/2015 20:50:44
+Ticket: 1342309
+
+Registro 126
+Dominio: loteriascaixa.gov.br
+Documento: 000.360.305/2399-13
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 04/08/2000 21:17:56
+dataHoraAtualiza: 16/07/2015 21:21:50
+Ticket: 399432
+
+Registro 127
+Dominio: lotofacil.gov.br
+Documento: 000.360.305/2399-13
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 04/08/2000 21:17:56
+dataHoraAtualiza: 16/07/2015 21:22:23
+Ticket: 399433
+
+Registro 128
+Dominio: lotomania.gov.br
+Documento: 000.360.305/2399-13
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 30/09/2003 19:48:18
+dataHoraAtualiza: 
+Ticket: 1342303
+
+Registro 129
+Dominio: caixaaqui.gov.br
+Documento: 000.360.305/2714-85
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 05/09/2001 20:08:24
+dataHoraAtualiza: 16/07/2015 18:51:27
+Ticket: 628476
+
+:: Aperte ENTER para continuar o browsing ::
+Registro 130
+Dominio: caixainvest.gov.br
+Documento: 000.360.305/2714-85
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 25/10/2001 19:55:47
+dataHoraAtualiza: 16/07/2015 19:34:29
+Ticket: 650493
+
+Registro 131
+Dominio: caixainveste.gov.br
+Documento: 000.360.305/2714-85
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 25/10/2001 19:55:48
+dataHoraAtualiza: 16/07/2015 19:34:57
+Ticket: 650495
+
+Registro 132
+Dominio: e-conta.gov.br
+Documento: 000.360.305/2714-85
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 05/09/2001 20:08:23
+dataHoraAtualiza: 18/12/2002 15:53:27
+Ticket: 628473
+
+Registro 133
+Dominio: e-contacaixa.gov.br
+Documento: 000.360.305/2714-85
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 17/12/2001 19:18:37
+dataHoraAtualiza: 18/12/2002 15:53:43
+Ticket: 685789
+
+Registro 134
+Dominio: e-pagamentos.gov.br
+Documento: 000.360.305/2714-85
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 17/12/2001 19:18:38
+dataHoraAtualiza: 18/12/2002 15:53:57
+Ticket: 685791
+
+Registro 135
+Dominio: e-pagamentoscaixa.gov.br
+Documento: 000.360.305/2714-85
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 17/12/2001 19:18:38
+dataHoraAtualiza: 18/12/2002 15:54:12
+Ticket: 685790
+
+Registro 136
+Dominio: ecobrancacaixa.gov.br
+Documento: 000.360.305/2714-85
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 01/04/2002 18:33:13
+dataHoraAtualiza: 18/12/2002 15:54:29
+Ticket: 768337
+
+Registro 137
+Dominio: investcaixa.gov.br
+Documento: 000.360.305/2714-85
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 25/10/2001 19:55:49
+dataHoraAtualiza: 18/12/2002 15:55:00
+Ticket: 650496
+
+Registro 138
+Dominio: investecaixa.gov.br
+Documento: 000.360.305/2714-85
+Nome: CAIXA ECONOMICA FEDERAL
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 25/10/2001 19:55:49
+dataHoraAtualiza: 18/12/2002 15:55:17
+Ticket: 650497
+
+Registro 139
+Dominio: geipot.gov.br
+Documento: 000.366.914/0001-70
+Nome: EMPRESA BRASILEIRA DE PLANEJAMENTO DE
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 31/10/1996 11:00:00
+dataHoraAtualiza: 30/07/2014 18:42:20
+Ticket: 20961
+
+:: Aperte ENTER para continuar o browsing ::
+Registro 140
+Dominio: dpu.gov.br
+Documento: 000.375.114/0001-16
+Nome: Defensoria P�blica-Geral da Uni�o
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 05/10/2007 17:05:55
+dataHoraAtualiza: 22/11/2016 13:18:43
+Ticket: 3957938
+
+Registro 141
+Dominio: incra.gov.br
+Documento: 000.375.972/0002-41
+Nome: INCRA/INSTITUTO NACIONAL DE COLON E REF. AGRARIA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 12/07/1996 12:00:00
+dataHoraAtualiza: 22/03/2017 22:12:39
+Ticket: 11611
+
+Registro 142
+Dominio: nead.gov.br
+Documento: 000.375.972/0002-41
+Nome: INCRA/INSTITUTO NACIONAL DE COLON E REF. AGRARIA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 07/04/1999 11:58:19
+dataHoraAtualiza: 03/08/2011 15:57:51
+Ticket: 146549
+
+Registro 143
+Dominio: incra-pe.gov.br
+Documento: 000.375.972/0005-94
+Nome: Superint. Estadual de Pernambuco - Incra
+UF: PE
+Cidade: Recife
+dataHoraCadastro: 25/11/1998 14:12:52
+dataHoraAtualiza: 
+Ticket: 123516
+
+Registro 144
+Dominio: incrarn.gov.br
+Documento: 000.375.972/0018-09
+Nome: Instituto Nacional de Colonizacao e Ref. Agraria
+UF: Rio Grande do Norte
+Cidade: Natal
+dataHoraCadastro: 17/06/1998 12:30:34
+dataHoraAtualiza: 04/09/2003 12:27:34
+Ticket: 99023
+
+Registro 145
+Dominio: fnde.gov.br
+Documento: 000.378.257/0001-81
+Nome: FUNDO NACIONAL DE DESENVOLVIMENTO DA EDUCACAO
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 17/11/1998 15:57:35
+dataHoraAtualiza: 24/02/2016 12:06:54
+Ticket: 124561
+
+Registro 146
+Dominio: dnpm.gov.br
+Documento: 000.381.056/0001-33
+Nome: Departamento Nacional de Producao Mineral
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 02/04/1997 12:00:00
+dataHoraAtualiza: 04/02/2015 17:05:05
+Ticket: 35177
+
+Registro 147
+Dominio: pormin.gov.br
+Documento: 000.381.056/0001-33
+Nome: Departamento Nacional de Producao Mineral
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 11/01/2008 19:24:38
+dataHoraAtualiza: 04/02/2015 17:05:28
+Ticket: 4136215
+
+Registro 148
+Dominio: dnpm-pe.gov.br
+Documento: 000.381.056/0005-67
+Nome: 4 Distrito DNPM - PE
+UF: PE
+Cidade: Recife
+dataHoraCadastro: 01/10/2002 12:12:23
+dataHoraAtualiza: 16/08/2013 12:43:47
+Ticket: 957607
+
+Registro 149
+Dominio: dnpmsc.gov.br
+Documento: 000.381.056/0012-96
+Nome: DNPM - 11� Distrito
+UF: Santa Catarina
+Cidade: Florian�polis
+dataHoraCadastro: 07/05/2002 19:05:37
+dataHoraAtualiza: 07/05/2007 21:38:38
+Ticket: 825078
+
+:: Aperte ENTER para continuar o browsing ::
+Registro 150
+Dominio: dnpmma.gov.br
+Documento: 000.381.056/0023-49
+Nome: DNPM - Depart. Nacional de Produ��o Mineral
+UF: Maranh�o
+Cidade: sao luis
+dataHoraCadastro: 04/09/2002 17:28:42
+dataHoraAtualiza: 04/09/2002 14:28:42
+Ticket: 944603
+
+Registro 151
+Dominio: bndespar.gov.br
+Documento: 000.383.281/0001-09
+Nome: BNDES Participa��es S/A
+UF: Rio de Janeiro
+Cidade: Rio de Janeiro
+dataHoraCadastro: 17/05/2006 17:29:51
+dataHoraAtualiza: 11/11/2014 20:48:56
+Ticket: 2800307
+
+Registro 152
+Dominio: aerofacil.gov.br
+Documento: 000.394.411/0001-09
+Nome: PRESID�NCIA DA REP�BLICA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 23/12/2013 18:07:43
+dataHoraAtualiza: 15/01/2014 20:30:54
+Ticket: 12368464
+
+Registro 153
+Dominio: aplicativos.gov.br
+Documento: 000.394.411/0001-09
+Nome: PRESID�NCIA DA REP�BLICA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 26/08/2013 12:54:00
+dataHoraAtualiza: 22/12/2016 19:21:36
+Ticket: 11895940
+
+Registro 154
+Dominio: brasil.gov.br
+Documento: 000.394.411/0001-09
+Nome: PRESID�NCIA DA REP�BLICA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 06/12/1996 11:00:00
+dataHoraAtualiza: 22/12/2016 19:43:54
+Ticket: 24188
+
+Registro 155
+Dominio: brazil.gov.br
+Documento: 000.394.411/0001-09
+Nome: PRESID�NCIA DA REP�BLICA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 06/12/1996 11:00:00
+dataHoraAtualiza: 28/03/2010 17:35:34
+Ticket: 24189
+
+Registro 156
+Dominio: brazilgovnews.gov.br
+Documento: 000.394.411/0001-09
+Nome: PRESID�NCIA DA REP�BLICA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 25/07/2016 13:15:35
+dataHoraAtualiza: 25/07/2016 13:15:35
+Ticket: 15887965
+
+Registro 157
+Dominio: casacivil.gov.br
+Documento: 000.394.411/0001-09
+Nome: PRESID�NCIA DA REP�BLICA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 08/08/2009 18:51:56
+dataHoraAtualiza: 28/04/2016 12:43:56
+Ticket: 5829920
+
+Registro 158
+Dominio: cdes.gov.br
+Documento: 000.394.411/0001-09
+Nome: PRESID�NCIA DA REP�BLICA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 12/02/2003 14:00:50
+dataHoraAtualiza: 12/02/2003 12:00:50
+Ticket: 1105216
+
+Registro 159
+Dominio: cnv.gov.br
+Documento: 000.394.411/0001-09
+Nome: PRESID�NCIA DA REP�BLICA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 24/07/2012 10:50:50
+dataHoraAtualiza: 15/01/2016 14:16:54
+Ticket: 10171985
+
+:: Aperte ENTER para continuar o browsing ::
+Registro 160
+Dominio: confiancabrasil.gov.br
+Documento: 000.394.411/0001-09
+Nome: PRESID�NCIA DA REP�BLICA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 26/12/2008 12:22:25
+dataHoraAtualiza: 
+Ticket: 5135023
+
+Registro 161
+Dominio: confiancanobrasil.gov.br
+Documento: 000.394.411/0001-09
+Nome: PRESID�NCIA DA REP�BLICA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 26/12/2008 12:22:25
+dataHoraAtualiza: 26/12/2008 12:22:25
+Ticket: 5148848
+
+Registro 162
+Dominio: ctir.gov.br
+Documento: 000.394.411/0001-09
+Nome: PRESID�NCIA DA REP�BLICA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 17/12/2004 17:03:07
+dataHoraAtualiza: 14/09/2016 13:59:26
+Ticket: 1940214
+
+Registro 163
+Dominio: dialoga.gov.br
+Documento: 000.394.411/0001-09
+Nome: PRESID�NCIA DA REP�BLICA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 14/04/2015 17:49:35
+dataHoraAtualiza: 14/04/2015 17:49:35
+Ticket: 14062641
+
+Registro 164
+Dominio: emdefesadademocracia.gov.br
+Documento: 000.394.411/0001-09
+Nome: PRESID�NCIA DA REP�BLICA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 12/04/2016 15:25:31
+dataHoraAtualiza: 12/04/2016 15:25:31
+Ticket: 15430403
+
+Registro 165
+Dominio: equilibriodecontas.gov.br
+Documento: 000.394.411/0001-09
+Nome: PRESID�NCIA DA REP�BLICA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 07/10/2016 21:27:57
+dataHoraAtualiza: 07/10/2016 21:27:57
+Ticket: 16163755
+
+Registro 166
+Dominio: fomezero.gov.br
+Documento: 000.394.411/0001-09
+Nome: PRESID�NCIA DA REP�BLICA
+UF: Distrito Federal
+Cidade:
+dataHoraCadastro: 
+dataHoraAtualiza: 
+Ticket: 1073518
+
+Registro 167
+Dominio: gastospublicos.gov.br
+Documento: 000.394.411/0001-09
+Nome: PRESID�NCIA DA REP�BLICA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 07/10/2016 10:56:36
+dataHoraAtualiza: 07/10/2016 10:56:36
+Ticket: 16167275
+
+Registro 168
+Dominio: govbrasil.gov.br
+Documento: 000.394.411/0001-09
+Nome: PRESID�NCIA DA REP�BLICA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 26/08/2013 12:54:00
+dataHoraAtualiza: 26/08/2013 12:54:00
+Ticket: 11895959
+
+Registro 169
+Dominio: juventude.gov.br
+Documento: 000.394.411/0001-09
+Nome: PRESID�NCIA DA REP�BLICA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 17/10/2007 19:13:26
+dataHoraAtualiza: 03/10/2011 20:09:30
+Ticket: 3962921
+
+:: Aperte ENTER para continuar o browsing ::
+Registro 170
+Dominio: maisbrasil.gov.br
+Documento: 000.394.411/0001-09
+Nome: PRESID�NCIA DA REP�BLICA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 11/10/2007 19:08:36
+dataHoraAtualiza: 22/09/2014 17:06:58
+Ticket: 3955204
+
+Registro 171
+Dominio: minhacasaminhavida.gov.br
+Documento: 000.394.411/0001-09
+Nome: PRESID�NCIA DA REP�BLICA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 08/04/2009 00:23:47
+dataHoraAtualiza: 08/04/2009 00:23:47
+Ticket: 5419701
+
+Registro 172
+Dominio: nae.gov.br
+Documento: 000.394.411/0001-09
+Nome: PRESID�NCIA DA REP�BLICA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 23/11/2005 12:17:24
+dataHoraAtualiza: 28/02/2008 23:13:57
+Ticket: 2478043
+
+Registro 173
+Dominio: observatoriodegenero.gov.br
+Documento: 000.394.411/0001-09
+Nome: PRESID�NCIA DA REP�BLICA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 22/01/2009 10:18:04
+dataHoraAtualiza: 22/01/2009 10:18:04
+Ticket: 5206019
+
+Registro 174
+Dominio: odmbrasil.gov.br
+Documento: 000.394.411/0001-09
+Nome: PRESID�NCIA DA REP�BLICA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 21/05/2012 13:31:12
+dataHoraAtualiza: 21/05/2012 13:31:12
+Ticket: 9831924
+
+Registro 175
+Dominio: pesquisademidia.gov.br
+Documento: 000.394.411/0001-09
+Nome: PRESID�NCIA DA REP�BLICA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 07/12/2016 10:01:30
+dataHoraAtualiza: 07/12/2016 10:01:30
+Ticket: 16424434
+
+Registro 176
+Dominio: planalto.gov.br
+Documento: 000.394.411/0001-09
+Nome: PRESID�NCIA DA REP�BLICA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 16/04/1996 12:00:00
+dataHoraAtualiza: 21/12/2016 20:21:47
+Ticket: 6787
+
+Registro 177
+Dominio: portosdobrasil.gov.br
+Documento: 000.394.411/0001-09
+Nome: PRESID�NCIA DA REP�BLICA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 16/07/2007 13:37:21
+dataHoraAtualiza: 
+Ticket: 3736210
+
+Registro 178
+Dominio: ppi.gov.br
+Documento: 000.394.411/0001-09
+Nome: PRESID�NCIA DA REP�BLICA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 07/10/2016 21:27:57
+dataHoraAtualiza: 07/10/2016 21:27:57
+Ticket: 16161706
+
+Registro 179
+Dominio: presidencia.gov.br
+Documento: 000.394.411/0001-09
+Nome: PRESID�NCIA DA REP�BLICA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 03/03/2000 13:28:22
+dataHoraAtualiza: 19/09/2011 00:22:20
+Ticket: 276235
+
+:: Aperte ENTER para continuar o browsing ::
+Registro 180
+Dominio: presidenciadarepublica.gov.br
+Documento: 000.394.411/0001-09
+Nome: PRESID�NCIA DA REP�BLICA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 11/05/2000 21:20:23
+dataHoraAtualiza: 29/03/2006 18:27:45
+Ticket: 337135
+
+Registro 181
+Dominio: projetocrescer.gov.br
+Documento: 000.394.411/0001-09
+Nome: PRESID�NCIA DA REP�BLICA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 15/08/2016 18:22:41
+dataHoraAtualiza: 15/08/2016 18:22:41
+Ticket: 15961256
+
+Registro 182
+Dominio: prplanalto.gov.br
+Documento: 000.394.411/0001-09
+Nome: PRESID�NCIA DA REP�BLICA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 13/11/2013 18:13:53
+dataHoraAtualiza: 10/04/2015 22:04:19
+Ticket: 12244593
+
+Registro 183
+Dominio: reformadaprevidencia.gov.br
+Documento: 000.394.411/0001-09
+Nome: PRESID�NCIA DA REP�BLICA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 02/12/2016 13:17:30
+dataHoraAtualiza: 02/12/2016 13:17:30
+Ticket: 16409586
+
+Registro 184
+Dominio: regulacao.gov.br
+Documento: 000.394.411/0001-09
+Nome: PRESID�NCIA DA REP�BLICA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 01/06/2009 19:37:13
+dataHoraAtualiza: 01/06/2009 19:37:13
+Ticket: 5602143
+
+Registro 185
+Dominio: sae.gov.br
+Documento: 000.394.411/0001-09
+Nome: PRESID�NCIA DA REP�BLICA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 09/10/1997 11:00:00
+dataHoraAtualiza: 18/08/2016 20:10:39
+Ticket: 62181
+
+Registro 186
+Dominio: senad.gov.br
+Documento: 000.394.411/0001-09
+Nome: PRESID�NCIA DA REP�BLICA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 29/10/1998 13:09:47
+dataHoraAtualiza: 04/01/2012 13:47:35
+Ticket: 123648
+
+Registro 187
+Dominio: splp.gov.br
+Documento: 000.394.411/0001-09
+Nome: PRESID�NCIA DA REP�BLICA
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 16/07/2007 13:37:22
+dataHoraAtualiza: 16/07/2007 13:37:22
+Ticket: 3746202
+
+Registro 188
+Dominio: cbnb.gov.br
+Documento: 000.394.429/0023-16
+Nome: TERCEIRO COMANDO AEREO REGIONAL
+UF: Rio de Janeiro
+Cidade: Rio de Janeiro
+dataHoraCadastro: 24/10/2005 16:34:04
+dataHoraAtualiza: 20/08/2014 13:45:42
+Ticket: 2392361
+
+Registro 189
+Dominio: dac.gov.br
+Documento: 000.394.429/0043-60
+Nome: DEPARTAMENTO DE AVIACAO CIVIL - DAC
+UF: Distrito Federal
+Cidade: Bras�lia
+dataHoraCadastro: 08/04/1997 12:00:00
+dataHoraAtualiza: 11/09/2012 17:33:18
+Ticket: 35808
+
+:: Aperte ENTER para continuar o browsing ::
+Registro 190
+Dominio: brmcc.gov.br
+Documento: 000.394.429/0048-74
+Nome: Departamento de Controle do Espa�o A�reo
+UF: Rio de Janeiro
+Cidade: Rio de Janeiro
+dataHoraCadastro: 08/07/2005 20:03:00
+dataHoraAtualiza: 08/07/2005 17:03:00
+Ticket: 2215475
+
+Registro 191
+Dominio: cernai.gov.br
+Documento: 000.394.429/0048-74
+Nome: Departamento de Controle do Espa�o A�reo
+UF: Rio de Janeiro
+Cidade: Rio de Janeiro
+dataHoraCadastro: 
+dataHoraAtualiza: 
+Ticket: 1735827
+
+Registro 192
+Dominio: cgna.gov.br
+Documento: 000.394.429/0048-74
+Nome: Departamento de Controle do Espa�o A�reo
+UF: Rio de Janeiro
+Cidade: Rio de Janeiro
+dataHoraCadastro: 26/12/2001 18:40:12
+dataHoraAtualiza: 14/09/2015 17:29:59
+Ticket: 701713
+
+Registro 193
+Dominio: dcea.gov.br
+Documento: 000.394.429/0048-74
+Nome: Departamento de Controle do Espa�o A�reo
+UF: Rio de Janeiro
+Cidade: Rio de Janeiro
+dataHoraCadastro: 20/12/2001 19:59:27
+dataHoraAtualiza: 24/01/2014 11:54:38
+Ticket: 700710
+
+Registro 194
+Dominio: decea.gov.br
+Documento: 000.394.429/0048-74
+Nome: Departamento de Controle do Espa�o A�reo
+UF: Rio de Janeiro
+Cidade: Rio de Janeiro
+dataHoraCadastro: 26/12/2001 18:40:17
+dataHoraAtualiza: 23/01/2017 14:51:51
+Ticket: 705211
+
+Registro 195
+Dominio: depv.gov.br
+Documento: 000.394.429/0048-74
+Nome: Departamento de Controle do Espa�o A�reo
+UF: Rio de Janeiro
+Cidade: Rio de Janeiro
+dataHoraCadastro: 20/03/2000 12:08:06
+dataHoraAtualiza: 24/01/2014 11:55:16
+Ticket: 284049
+
+Registro 196
+Dominio: icea.gov.br
+Documento: 000.394.429/0048-74
+Nome: Departamento de Controle do Espa�o A�reo
+UF: Rio de Janeiro
+Cidade:
+dataHoraCadastro: 
+dataHoraAtualiza: 
+Ticket: 1463809
+
+Registro 197
+Dominio: cindacta2.gov.br
+Documento: 000.394.429/0055-01
+Nome: Segundo Centro Integrado de Contr. Trafego A�reo
+UF: Paran�
+Cidade: Curitiba
+dataHoraCadastro: 28/07/2010 11:05:52
+dataHoraAtualiza: 04/06/2014 00:30:59
+Ticket: 7100525
+
+Registro 198
+Dominio: pame.gov.br
+Documento: 000.394.429/0069-07
+Nome: Parque de Material de Eletr�nica da Aeron�utica
+UF: Rio de Janeiro
+Cidade: Rio de Janeiro
+dataHoraCadastro: 14/12/2004 12:24:14
+dataHoraAtualiza: 23/03/2015 18:13:17
+Ticket: 1924674
+
+Registro 199
+Dominio: serac4.gov.br
+Documento: 000.394.429/0086-08
+Nome: MAER QUARTO SERVI�O REGIONAL DE AVIA��O CIVIL
+UF: S�o Paulo
+Cidade: S�o Paulo
+dataHoraCadastro: 12/07/2005 16:00:47
+dataHoraAtualiza: 30/11/2006 13:18:46
+Ticket: 2228294
+| Digite a operacao que deseja realizar: Buscar pelo RRN: 
+::Nao foi possivel recuperar o registro::
+| Digite a operacao que deseja realizar: Buscar pelo RRN: Digite o codigo do campo desejado:
+	(1) Dominio
+	(2) Documento
+	(3) Nome
+	(4) UF
+	(5) Cidade
+	(6) dataHoraCadastro
+	(7) dataHoraAtualiza
+	(8) Ticket
+
+::Nao foi possivel recuperar o campo::
